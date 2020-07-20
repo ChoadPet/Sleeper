@@ -22,7 +22,7 @@ class RSBaseView: UIView {
     }
     
     var highlightColor: UIColor {
-        return .separator
+        return .gray
     }
     
     required init?(coder aDecoder: NSCoder) {

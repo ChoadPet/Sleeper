@@ -21,6 +21,18 @@ class HomeViewController: UIViewController {
             titleLabel.font = UIFont.systemFont(ofSize: 27, weight: .black)
         }
     }
+    @IBOutlet weak var soundTimerView: TimerPreferenceView! {
+        didSet {
+            soundTimerView.roundCorners(radius: 8)
+            soundTimerView.backgroundColor = .darkGray
+        }
+    }
+    @IBOutlet weak var recordingDurationView: TimerPreferenceView! {
+        didSet {
+            recordingDurationView.roundCorners(radius: 8)
+            recordingDurationView.backgroundColor = .darkGray
+        }
+    }
     @IBOutlet weak var primaryButton: UIButton! {
         didSet {
             primaryButton.roundCorners(radius: 8)
