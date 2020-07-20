@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
 		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
+		CE690E4824C62B51007DF3C2 /* TimerPreferenceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4724C62B51007DF3C2 /* TimerPreferenceEntity.swift */; };
 		CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */; };
 		CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B324C609A1006EDE16 /* MainRouter.swift */; };
 		CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
 		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
+		CE690E4724C62B51007DF3C2 /* TimerPreferenceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceEntity.swift; sourceTree = "<group>"; };
 		CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE9B76B324C609A1006EDE16 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		CE690E4224C6225D007DF3C2 /* TimerPreferenceView */ = {
 			isa = PBXGroup;
 			children = (
+				CE690E4724C62B51007DF3C2 /* TimerPreferenceEntity.swift */,
 				CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */,
 				CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */,
 			);
@@ -271,6 +274,7 @@
 				CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */,
 				CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
+				CE690E4824C62B51007DF3C2 /* TimerPreferenceEntity.swift in Sources */,
 				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,

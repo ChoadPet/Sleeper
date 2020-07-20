@@ -16,4 +16,9 @@ extension UIView {
         clipsToBounds = true
     }
     
+    func addTapGestureRecognizer(target: Any, selector: Selector) {
+        let gesture = UITapGestureRecognizer(target: target, action: selector)
+        isUserInteractionEnabled = true
+        addGestureRecognizer(gesture)
+    }
 }

@@ -24,12 +24,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var soundTimerView: TimerPreferenceView! {
         didSet {
             soundTimerView.roundCorners(radius: 8)
+            soundTimerView.addTapGestureRecognizer(target: self, selector: #selector(soundTimerAction))
             soundTimerView.backgroundColor = .darkGray
         }
     }
     @IBOutlet weak var recordingDurationView: TimerPreferenceView! {
         didSet {
             recordingDurationView.roundCorners(radius: 8)
+            recordingDurationView.addTapGestureRecognizer(target: self, selector: #selector(recordingDurationAction))
             recordingDurationView.backgroundColor = .darkGray
         }
     }
@@ -48,16 +50,33 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.viewDidLoad()
     }
     
     // MARK: Actions
 
     @IBAction func primaryButtonAction(_ sender: UIButton) {
-        
+        presenter.primaryButtonPressed()
+    }
+    
+    @objc private func soundTimerAction(_ sender: UITapGestureRecognizer) {
+        presenter.soundTimerPressed()
+    }
+    
+    @objc private func recordingDurationAction(_ sender: UITapGestureRecognizer) {
+        presenter.recordingDurationPressed()
     }
     
 }
 
 extension HomeViewController: HomeViewProtocol {
+    
+    func configureSoundTimerView(_ model: TimerPreferenceModel) {
+        soundTimerView.configure(model)
+    }
+    
+    func configureRecordingDurationView(_ model: TimerPreferenceModel) {
+        recordingDurationView.configure(model)
+    }
     
 }
