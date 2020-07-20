@@ -23,6 +23,7 @@
 		CEDBDA2824C6174900693DAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2724C6174900693DAA /* Constants.swift */; };
 		CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */; };
 		CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */; };
+		CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA3224C621F100693DAA /* RSBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CEDBDA2724C6174900693DAA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNavigationController.swift; sourceTree = "<group>"; };
+		CEDBDA3224C621F100693DAA /* RSBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
+				CEDBDA3224C621F100693DAA /* RSBaseView.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
+				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
