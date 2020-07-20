@@ -11,10 +11,10 @@ import UIKit
 class MainRouter: NSObject {
     
     // This stuck of navigations is all previous, when we present new navigation with viewController
-    private var previousNavigationControllers: [UINavigationController]
-    private var currentNavigationController: UINavigationController
+    private var previousNavigationControllers: [RSNavigationController]
+    private var currentNavigationController: RSNavigationController
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: RSNavigationController) {
         self.currentNavigationController = navigationController
         self.previousNavigationControllers = []
     }
@@ -29,7 +29,7 @@ class MainRouter: NSObject {
                  modalPresentationStyle: UIModalPresentationStyle = .overFullScreen,
                  completion: (() -> Void)? = nil) {
         
-        let newNavigation = UINavigationController(rootViewController: viewController)
+        let newNavigation = RSNavigationController(rootViewController: viewController)
         newNavigation.modalTransitionStyle = modalTransitionStyle
         newNavigation.modalPresentationStyle = modalPresentationStyle
         

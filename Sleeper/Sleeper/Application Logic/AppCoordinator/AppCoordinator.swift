@@ -28,8 +28,8 @@ final class AppCoordinator {
 
 extension AppCoordinator {
     
-    private func welcomeViewController() -> UINavigationController {
-        let navigation = UINavigationController()
+    private func welcomeViewController() -> RSNavigationController {
+        let navigation = RSNavigationController()
         let router = MainRouter(navigationController: navigation)
         let coordinator = BaseCoordinator(appCoordinator: self, router: router)
         let viewController = coordinator.homeViewController()

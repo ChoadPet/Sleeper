@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Sleeper" customModuleProvider="target">
             <connections>
+                <outlet property="primaryButton" destination="4ji-EU-DBP" id="OGh-8o-KYP"/>
+                <outlet property="titleLabel" destination="IM8-Gf-OhN" id="byo-45-UYi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +18,30 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-Gf-OhN">
+                    <rect key="frame" x="16" y="84" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ji-EU-DBP">
+                    <rect key="frame" x="16" y="762" width="382" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2dw-Sf-Tww"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="IM8-Gf-OhN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="EjW-uQ-B04"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4ji-EU-DBP" secondAttribute="trailing" constant="16" id="PhP-Aj-Qgb"/>
+                <constraint firstItem="4ji-EU-DBP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qfj-Rk-9Aa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4ji-EU-DBP" secondAttribute="bottom" constant="50" id="RW3-WQ-k8j"/>
+                <constraint firstItem="IM8-Gf-OhN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ZlE-tx-0SC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IM8-Gf-OhN" secondAttribute="trailing" constant="16" id="unh-hk-w0B"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="154"/>
         </view>

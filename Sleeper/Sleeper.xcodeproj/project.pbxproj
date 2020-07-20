@@ -16,6 +16,13 @@
 		CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7313324C5F64200B39CF3 /* AppDelegate.swift */; };
 		CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313C24C5F64500B39CF3 /* Assets.xcassets */; };
 		CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */; };
+		CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA1E24C6120600693DAA /* UIViewExtension.swift */; };
+		CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2024C6122600693DAA /* NSObjectExtension.swift */; };
+		CEDBDA2324C6141700693DAA /* nature.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CEDBDA2224C6141700693DAA /* nature.m4a */; };
+		CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2424C616B800693DAA /* UIImageExtension.swift */; };
+		CEDBDA2824C6174900693DAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2724C6174900693DAA /* Constants.swift */; };
+		CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */; };
+		CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		CEC7313C24C5F64500B39CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC7313F24C5F64500B39CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC7314124C5F64500B39CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDBDA1E24C6120600693DAA /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		CEDBDA2024C6122600693DAA /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		CEDBDA2224C6141700693DAA /* nature.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = nature.m4a; sourceTree = "<group>"; };
+		CEDBDA2424C616B800693DAA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		CEDBDA2724C6174900693DAA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */,
-				CE9B76B324C609A1006EDE16 /* MainRouter.swift */,
 				CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */,
+				CE9B76B324C609A1006EDE16 /* MainRouter.swift */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -56,8 +70,11 @@
 		CE9B76B824C60A83006EDE16 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CEDBDA2624C6173D00693DAA /* Constants */,
 				CE9B76B124C609A1006EDE16 /* AppCoordinator */,
 				CE9B76BB24C60ABB006EDE16 /* Presenation */,
+				CEDBDA2D24C61CFD00693DAA /* CustomElements */,
+				CEDBDA1B24C611E800693DAA /* Extension */,
 			);
 			path = "Application Logic";
 			sourceTree = "<group>";
@@ -72,6 +89,7 @@
 		CE9B76BA24C60A9C006EDE16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEDBDA2224C6141700693DAA /* nature.m4a */,
 				CEC7313C24C5F64500B39CF3 /* Assets.xcassets */,
 				CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */,
 				CEC7314124C5F64500B39CF3 /* Info.plist */,
@@ -122,6 +140,41 @@
 				CE9B76BA24C60A9C006EDE16 /* Resources */,
 			);
 			path = Sleeper;
+			sourceTree = "<group>";
+		};
+		CEDBDA1B24C611E800693DAA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEDBDA1C24C611EF00693DAA /* UI */,
+				CEDBDA2024C6122600693DAA /* NSObjectExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CEDBDA1C24C611EF00693DAA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CEDBDA1E24C6120600693DAA /* UIViewExtension.swift */,
+				CEDBDA2424C616B800693DAA /* UIImageExtension.swift */,
+				CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CEDBDA2624C6173D00693DAA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CEDBDA2724C6174900693DAA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CEDBDA2D24C61CFD00693DAA /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
+			);
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */,
+				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
 				CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */,
 			);
@@ -199,8 +253,14 @@
 				CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */,
 				CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
+				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
+				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
+				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
+				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
+				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
+				CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

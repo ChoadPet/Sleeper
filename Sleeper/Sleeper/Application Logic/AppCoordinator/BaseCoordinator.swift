@@ -31,7 +31,7 @@ final class BaseCoordinator {
 extension BaseCoordinator {
     
     private func createHomeViewController() -> HomeViewController {
-        let viewController = HomeViewController.init(nibName: String(describing: HomeViewController.self), bundle: nil)
+        let viewController = HomeViewController.init(nibName: HomeViewController.className, bundle: nil)
         let presenter = HomePresenter(view: viewController, coordinator: self)
         viewController.presenter = presenter
         return viewController
