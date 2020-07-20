@@ -32,18 +32,40 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-r6-9aB">
+                    <rect key="frame" x="16" y="482" width="382" height="240"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhg-wP-Kxi" customClass="TimerPreferenceView" customModule="Sleeper" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="Itk-N1-l1W"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kp2-72-sYg" customClass="TimerPreferenceView" customModule="Sleeper" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="120" width="382" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="eum-HZ-MJG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
+                <constraint firstItem="4ji-EU-DBP" firstAttribute="top" secondItem="MrO-r6-9aB" secondAttribute="bottom" constant="40" id="40o-Zh-SwR"/>
                 <constraint firstItem="IM8-Gf-OhN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="EjW-uQ-B04"/>
+                <constraint firstItem="MrO-r6-9aB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OCT-C6-YeN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4ji-EU-DBP" secondAttribute="trailing" constant="16" id="PhP-Aj-Qgb"/>
                 <constraint firstItem="4ji-EU-DBP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qfj-Rk-9Aa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4ji-EU-DBP" secondAttribute="bottom" constant="50" id="RW3-WQ-k8j"/>
                 <constraint firstItem="IM8-Gf-OhN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ZlE-tx-0SC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MrO-r6-9aB" secondAttribute="trailing" constant="16" id="hGs-dk-Xzd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IM8-Gf-OhN" secondAttribute="trailing" constant="16" id="unh-hk-w0B"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="154"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

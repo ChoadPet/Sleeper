@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseView: UIView {
+class RSBaseView: UIView {
     
     /// By default return `false`, if children return `true`
     /// should specify view to be `viewToHighlight`

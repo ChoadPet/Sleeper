@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
+		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
 		CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */; };
 		CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B324C609A1006EDE16 /* MainRouter.swift */; };
 		CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
+		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
 		CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE9B76B324C609A1006EDE16 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE690E4224C6225D007DF3C2 /* TimerPreferenceView */ = {
+			isa = PBXGroup;
+			children = (
+				CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */,
+				CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */,
+			);
+			path = TimerPreferenceView;
+			sourceTree = "<group>";
+		};
 		CE9B76B124C609A1006EDE16 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		CEDBDA2D24C61CFD00693DAA /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
+				CE690E4224C6225D007DF3C2 /* TimerPreferenceView */,
 				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
 				CEDBDA3224C621F100693DAA /* RSBaseView.swift */,
 			);
@@ -241,6 +255,7 @@
 				CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */,
 				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
+				CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */,
 				CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +276,7 @@
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
+				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
