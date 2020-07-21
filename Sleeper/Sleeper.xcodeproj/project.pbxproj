@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE17DA9024C74C5200CD08A6 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17DA8E24C74C5100CD08A6 /* TimeViewController.swift */; };
-		CE17DA9124C74C5200CD08A6 /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE17DA8F24C74C5100CD08A6 /* TimeViewController.xib */; };
-		CE17DA9324C74C5E00CD08A6 /* TimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17DA9224C74C5E00CD08A6 /* TimePresenter.swift */; };
 		CE17DA9724C7511A00CD08A6 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17DA9624C7511A00CD08A6 /* OptionModel.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
 		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
@@ -36,9 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE17DA8E24C74C5100CD08A6 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
-		CE17DA8F24C74C5100CD08A6 /* TimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeViewController.xib; sourceTree = "<group>"; };
-		CE17DA9224C74C5E00CD08A6 /* TimePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePresenter.swift; sourceTree = "<group>"; };
 		CE17DA9624C7511A00CD08A6 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
 		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
@@ -77,16 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE17DA8D24C74C3300CD08A6 /* TimeView */ = {
-			isa = PBXGroup;
-			children = (
-				CE17DA9224C74C5E00CD08A6 /* TimePresenter.swift */,
-				CE17DA8E24C74C5100CD08A6 /* TimeViewController.swift */,
-				CE17DA8F24C74C5100CD08A6 /* TimeViewController.xib */,
-			);
-			path = TimeView;
-			sourceTree = "<group>";
-		};
 		CE690E4224C6225D007DF3C2 /* TimerPreferenceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +124,6 @@
 		CE9B76BB24C60ABB006EDE16 /* Presenation */ = {
 			isa = PBXGroup;
 			children = (
-				CE17DA8D24C74C3300CD08A6 /* TimeView */,
 				CE9B76BC24C60AC0006EDE16 /* HomeView */,
 			);
 			path = Presenation;
@@ -282,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */,
-				CE17DA9124C74C5200CD08A6 /* TimeViewController.xib in Resources */,
 				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
 				CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */,
@@ -298,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9B76C224C60AFA006EDE16 /* HomePresenter.swift in Sources */,
-				CE17DA9024C74C5200CD08A6 /* TimeViewController.swift in Sources */,
 				CE17DA9724C7511A00CD08A6 /* OptionModel.swift in Sources */,
 				CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */,
 				CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */,
@@ -316,7 +297,6 @@
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
 				CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */,
 				CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */,
-				CE17DA9324C74C5E00CD08A6 /* TimePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
