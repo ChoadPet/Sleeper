@@ -14,7 +14,7 @@ final class OptionModel {
     let preference: TimerPreferenceModel.PreferenceType
     var currentSelectedPreference: TimerPreferenceModel
     
-    var availablePreferencesTitlesInHumanFormat: [String] {
+    var availablePreferencesTitles: [String] {
         return preference.preferences.map { $0.timeAndTimeType }
     }
     
