@@ -78,7 +78,11 @@ extension TimerPreferenceModel {
             }
         }
         
-        var preferences: [TimerPreferenceModel] {
+        var preferencesTitles: [String] {
+            return preferences.map { $0.timeAndTimeType }
+        }
+        
+        private var preferences: [TimerPreferenceModel] {
             switch self {
             case .soundTimer:
                 return [
