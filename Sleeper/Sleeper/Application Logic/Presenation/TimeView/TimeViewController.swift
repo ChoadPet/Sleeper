@@ -17,6 +17,11 @@ class TimeViewController: UIViewController {
 
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        presenter.touchesBegan()
+    }
 }
 
 extension TimeViewController: TimeViewProtocol {

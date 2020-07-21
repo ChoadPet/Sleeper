@@ -8,34 +8,21 @@
 
 import Foundation
 
-
 final class OptionModel {
-    
-    enum Option {
         
-        case off
-        case min(Int)
-        case hour(Int)
-        
-        var stringInterpolation: String {
-            switch self {
-            case .off: return "Off"
-            case .min(let minutes): return "\(minutes) min"
-            case .hour(let hours): return "\(hours) hours"
-            }
-        }
-        
-    }
-    
     let title: String
-    let availableOptions: [Option]
-    var currentSelectedOption: Option
+    let preference: TimePreferenceModel.PreferenceType
+    var currentSelectedPreference: TimePreferenceModel
     
-    
-    init(title: String, availableOptions: [Option], currentSelectedOption: Option) {
-        self.title = title
-        self.availableOptions = availableOptions
-        self.currentSelectedOption = currentSelectedOption
+    var availablePreferencesTitlesInHumanFormat: [String] {
+        return preference.preferences.map { $0.timeAndTimeType }
     }
     
+    
+    init(title: String, preferences: TimePreferenceModel.PreferenceType, currentSelectedPreference: TimePreferenceModel) {
+        self.title = title
+        self.preference = preferences
+        self.currentSelectedPreference = currentSelectedPreference
+    }
+
 }

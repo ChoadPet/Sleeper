@@ -71,12 +71,25 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewProtocol {
     
-    func configureSoundTimerView(_ model: TimerPreferenceModel) {
+    func configureSoundTimerView(_ model: TimePreferenceModel) {
         soundTimerView.configure(model)
     }
     
-    func configureRecordingDurationView(_ model: TimerPreferenceModel) {
+    func configureRecordingDurationView(_ model: TimePreferenceModel) {
         recordingDurationView.configure(model)
+    }
+    
+    func showAlert(title: String, actionsTitles: [String], completion: ((String) -> Void)?) {
+        let alert = RSAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        let optionsActions = actionsTitles.map { // :(
+            UIAlertAction(title: $0, style: .default) { action in
+                completion?(action.title!)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        alert.addActions(optionsActions)
+        present(alert, animated: true)
     }
     
 }

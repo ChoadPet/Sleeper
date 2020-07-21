@@ -10,8 +10,9 @@ import Foundation
 
 protocol HomeViewProtocol: class {
     
-    func configureSoundTimerView(_ model: TimerPreferenceModel)
-    func configureRecordingDurationView(_ model: TimerPreferenceModel)
+    func configureSoundTimerView(_ model: TimePreferenceModel)
+    func configureRecordingDurationView(_ model: TimePreferenceModel)
+    func showAlert(title: String, actionsTitles: [String], completion: ((String) -> Void)?)
 }
 
 final class HomePresenter {
@@ -19,39 +20,43 @@ final class HomePresenter {
     private unowned var view: HomeViewProtocol
     private let coordinator: BaseCoordinator
     
-    private var soundTimerOptions: [OptionModel.Option] = [
-        .off, .min(1), .min(10), .min(15), .min(20)
-    ]
+    private var currentSoundTimerPreference: TimePreferenceModel {
+        didSet {
+            if currentRecordingDurationPreference == oldValue { return }
+            soundTimerModel.currentSelectedPreference = currentSoundTimerPreference
+            view.configureSoundTimerView(currentSoundTimerPreference)
+        }
+    }
+    private var currentRecordingDurationPreference: TimePreferenceModel {
+        didSet {
+            if currentRecordingDurationPreference == oldValue { return }
+            recordingDurationModel.currentSelectedPreference = currentRecordingDurationPreference
+            view.configureRecordingDurationView(currentRecordingDurationPreference)
+        }
+    }
     
-    private var recordingDurationOptions: [OptionModel.Option] = [
-        .off, .min(5), .hour(1), .hour(2), .hour(3), .hour(4), .hour(5)
-    ]
-    
-    private var soundTimerModel: OptionModel
-    private var recordingDurationModel: OptionModel
+    private let soundTimerModel: OptionModel
+    private let recordingDurationModel: OptionModel
     
     
     init(view: HomeViewProtocol, coordinator: BaseCoordinator) {
         self.view = view
         self.coordinator = coordinator
+        self.currentSoundTimerPreference = TimePreferenceModel(time: nil, timeType: .off, preferenceType: .soundTimer)
+        self.currentRecordingDurationPreference = TimePreferenceModel(time: nil, timeType: .off, preferenceType: .recordingDuration)
         self.soundTimerModel = OptionModel(title: Constants.soundTimer,
-                                           availableOptions: soundTimerOptions,
-                                           currentSelectedOption: .off)
+                                           preferences: TimePreferenceModel.PreferenceType.soundTimer,
+                                           currentSelectedPreference: currentSoundTimerPreference)
         self.recordingDurationModel = OptionModel(title: Constants.recordingDuration,
-                                                  availableOptions: recordingDurationOptions,
-                                                  currentSelectedOption: .off)
+                                                  preferences: TimePreferenceModel.PreferenceType.recordingDuration,
+                                                  currentSelectedPreference: currentRecordingDurationPreference)
     }
-
+    
     // MARK: Public API
     
     func viewDidLoad() {
-        var model = TimerPreferenceModel(title: soundTimerModel.title,
-                                         description: soundTimerModel.currentSelectedOption.stringInterpolation)
-        view.configureSoundTimerView(model)
-        
-        model = TimerPreferenceModel(title: recordingDurationModel.title,
-                                     description: recordingDurationModel.currentSelectedOption.stringInterpolation)
-        view.configureRecordingDurationView(model)
+        view.configureSoundTimerView(soundTimerModel.currentSelectedPreference)
+        view.configureRecordingDurationView(recordingDurationModel.currentSelectedPreference)
     }
     
     func primaryButtonPressed() {
@@ -59,10 +64,21 @@ final class HomePresenter {
     }
     
     func soundTimerPressed() {
-        coordinator.timeViewController()
+        let title = soundTimerModel.title
+        let titles = soundTimerModel.availablePreferencesTitlesInHumanFormat
+        view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
+            self.currentSoundTimerPreference = TimePreferenceModel(string: chosenOption, preferenceType: .soundTimer)
+        }
     }
     
     func recordingDurationPressed() {
-        coordinator.timeViewController()
+        let title = recordingDurationModel.title
+        let titles = recordingDurationModel.availablePreferencesTitlesInHumanFormat
+        view.showAlert(title: title, actionsTitles: titles) { chosenOption in
+            self.currentRecordingDurationPreference = TimePreferenceModel(string: chosenOption, preferenceType: .recordingDuration)
+        }
     }
+    
+    // MARK: Private API
+    
 }

@@ -13,13 +13,15 @@
 		CE17DA9724C7511A00CD08A6 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17DA9624C7511A00CD08A6 /* OptionModel.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
 		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
-		CE690E4824C62B51007DF3C2 /* TimerPreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4724C62B51007DF3C2 /* TimerPreferenceModel.swift */; };
 		CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */; };
 		CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B324C609A1006EDE16 /* MainRouter.swift */; };
 		CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */; };
 		CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76BD24C60AEA006EDE16 /* HomeViewController.swift */; };
 		CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */; };
 		CE9B76C224C60AFA006EDE16 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */; };
+		CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */; };
+		CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4424C76D0800351AF2 /* RSAlertController.swift */; };
+		CEA01C4724C7750F00351AF2 /* TimePreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4624C7750F00351AF2 /* TimePreferenceModel.swift */; };
 		CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7313324C5F64200B39CF3 /* AppDelegate.swift */; };
 		CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313C24C5F64500B39CF3 /* Assets.xcassets */; };
 		CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */; };
@@ -40,13 +42,15 @@
 		CE17DA9624C7511A00CD08A6 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
 		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
-		CE690E4724C62B51007DF3C2 /* TimerPreferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceModel.swift; sourceTree = "<group>"; };
 		CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE9B76B324C609A1006EDE16 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		CE9B76BD24C60AEA006EDE16 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		CEA01C4424C76D0800351AF2 /* RSAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAlertController.swift; sourceTree = "<group>"; };
+		CEA01C4624C7750F00351AF2 /* TimePreferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePreferenceModel.swift; sourceTree = "<group>"; };
 		CEC7313024C5F64200B39CF3 /* Sleeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7313324C5F64200B39CF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7313C24C5F64500B39CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,7 +90,7 @@
 		CE690E4224C6225D007DF3C2 /* TimerPreferenceView */ = {
 			isa = PBXGroup;
 			children = (
-				CE690E4724C62B51007DF3C2 /* TimerPreferenceModel.swift */,
+				CEA01C4624C7750F00351AF2 /* TimePreferenceModel.swift */,
 				CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */,
 				CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */,
 			);
@@ -195,6 +199,7 @@
 				CEDBDA1E24C6120600693DAA /* UIViewExtension.swift */,
 				CEDBDA2424C616B800693DAA /* UIImageExtension.swift */,
 				CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */,
+				CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				CE690E4224C6225D007DF3C2 /* TimerPreferenceView */,
 				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
 				CEDBDA3224C621F100693DAA /* RSBaseView.swift */,
+				CEA01C4424C76D0800351AF2 /* RSAlertController.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -297,16 +303,18 @@
 				CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */,
 				CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
-				CE690E4824C62B51007DF3C2 /* TimerPreferenceModel.swift in Sources */,
 				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
+				CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */,
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
+				CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
+				CEA01C4724C7750F00351AF2 /* TimePreferenceModel.swift in Sources */,
 				CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */,
 				CE17DA9324C74C5E00CD08A6 /* TimePresenter.swift in Sources */,
 			);

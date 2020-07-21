@@ -23,4 +23,14 @@ final class TimePresenter {
         self.coordinator = coordinator
     }
     
+    func touchesBegan() {
+        closeViewController()
+    }
+    
+    // MARK: Private API
+    
+    private func closeViewController() {
+        coordinator.router.dismissViewController(animated: true, completion: nil)
+    }
+    
 }
