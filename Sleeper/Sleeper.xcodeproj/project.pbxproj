@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE17DA9724C7511A00CD08A6 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17DA9624C7511A00CD08A6 /* OptionModel.swift */; };
+		CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
 		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
 		CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		CE17DA9624C7511A00CD08A6 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
+		CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
 		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
 		CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		CE9B76B924C60A8A006EDE16 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
+				CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */,
 				CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */,
 				CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */,
 			);

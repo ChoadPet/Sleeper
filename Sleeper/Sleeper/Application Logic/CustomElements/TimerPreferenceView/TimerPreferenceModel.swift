@@ -26,18 +26,18 @@ final class TimerPreferenceModel {
         self.preferenceType = preferenceType
     }
     
-    init(string: String, preferenceType: PreferenceType) {
-        let array = string.components(separatedBy: .whitespaces)
-        if array.count == 1 {
+    init(string: String?, preferenceType: PreferenceType) {
+        let array = string?.components(separatedBy: .whitespaces)
+        if let options = array, options.count > 1 {
+            
+            /// option with time
+            self.time = Int(options[0])
+            self.timeType = TimeType(rawValue: options[1])!
+        } else {
             
             /// `off` option
             self.time = nil
-            self.timeType = TimeType(rawValue: array[0])!
-        } else {
-            
-            /// option with time
-            self.time = Int(array[0])
-            self.timeType = TimeType(rawValue: array[1])!
+            self.timeType = .off
         }
         self.preferenceType = preferenceType
     }

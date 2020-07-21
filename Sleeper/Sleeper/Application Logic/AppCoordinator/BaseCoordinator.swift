@@ -35,7 +35,8 @@ extension BaseCoordinator {
     
     private func createHomeViewController() -> HomeViewController {
         let viewController = HomeViewController.init(nibName: HomeViewController.className, bundle: nil)
-        let presenter = HomePresenter(view: viewController, coordinator: self)
+        let userDefaultsService = UserDefaultsService.shared
+        let presenter = HomePresenter(view: viewController, coordinator: self, userDefaultsService: userDefaultsService)
         viewController.presenter = presenter
         return viewController
     }
