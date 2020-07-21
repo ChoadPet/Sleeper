@@ -55,8 +55,8 @@ final class HomePresenter {
     // MARK: Public API
     
     func viewDidLoad() {
-        view.configureSoundTimerView(soundTimerModel.currentSelectedPreference)
-        view.configureRecordingDurationView(recordingDurationModel.currentSelectedPreference)
+        view.configureSoundTimerView(currentSoundTimerPreference)
+        view.configureRecordingDurationView(currentRecordingDurationPreference)
     }
     
     func primaryButtonPressed() {

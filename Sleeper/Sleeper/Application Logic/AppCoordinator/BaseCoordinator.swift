@@ -29,16 +29,6 @@ final class BaseCoordinator {
     
 }
 
-// MARK: Displaying viewController's
-
-extension BaseCoordinator {
-    
-    func timeViewController() {
-        let viewController = createTimeViewController()
-        router.present(viewController, animated: false)
-    }
-}
-
 // MARK: Creation viewController's
 
 extension BaseCoordinator {
@@ -46,13 +36,6 @@ extension BaseCoordinator {
     private func createHomeViewController() -> HomeViewController {
         let viewController = HomeViewController.init(nibName: HomeViewController.className, bundle: nil)
         let presenter = HomePresenter(view: viewController, coordinator: self)
-        viewController.presenter = presenter
-        return viewController
-    }
-    
-    private func createTimeViewController() -> TimeViewController {
-        let viewController = TimeViewController.init(nibName: TimeViewController.className, bundle: nil)
-        let presenter = TimePresenter(view: viewController, coordinator: self)
         viewController.presenter = presenter
         return viewController
     }
