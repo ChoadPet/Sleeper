@@ -48,8 +48,13 @@ class TimerPreferenceView: RSBaseView {
     }
     
     func configure(_ model: TimerPreferenceModel) {
-        titleLabel.text = model.preferenceType.title
-        descriptionLabel.text = model.timeAndTimeType
+        let animate: ((UILabel, String) -> Void) = { label, text in
+            UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                label.text = text
+            }, completion: nil)
+        }
+        animate(titleLabel, model.preferenceType.title)
+        animate(descriptionLabel, model.timeAndTimeType)
     }
     
 }
