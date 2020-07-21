@@ -47,7 +47,7 @@ class TimerPreferenceView: RSBaseView {
         addSubview(contentView)
     }
     
-    func configure(_ model: TimePreferenceModel) {
+    func configure(_ model: TimerPreferenceModel) {
         titleLabel.text = model.preferenceType.title
         descriptionLabel.text = model.timeAndTimeType
     }

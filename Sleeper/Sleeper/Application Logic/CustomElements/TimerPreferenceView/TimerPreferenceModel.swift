@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class TimePreferenceModel {
+final class TimerPreferenceModel {
     
     let time: Int?
     let timeType: TimeType
@@ -44,16 +44,16 @@ final class TimePreferenceModel {
     
 }
 
-extension TimePreferenceModel: Equatable {
+extension TimerPreferenceModel: Equatable {
     
-    static func == (lhs: TimePreferenceModel, rhs: TimePreferenceModel) -> Bool {
+    static func == (lhs: TimerPreferenceModel, rhs: TimerPreferenceModel) -> Bool {
         return lhs.time == rhs.time &&
             lhs.timeType == rhs.timeType &&
             lhs.preferenceType == rhs.preferenceType
     }
 }
 
-extension TimePreferenceModel {
+extension TimerPreferenceModel {
     
     enum TimeType: String {
         
@@ -64,7 +64,7 @@ extension TimePreferenceModel {
     
 }
 
-extension TimePreferenceModel {
+extension TimerPreferenceModel {
     
     enum PreferenceType {
         
@@ -78,26 +78,26 @@ extension TimePreferenceModel {
             }
         }
         
-        var preferences: [TimePreferenceModel] {
+        var preferences: [TimerPreferenceModel] {
             switch self {
             case .soundTimer:
                 return [
-                    TimePreferenceModel(time: nil, timeType: .off, preferenceType: self),
-                    TimePreferenceModel(time: 1, timeType: .min, preferenceType: self),
-                    TimePreferenceModel(time: 5, timeType: .min, preferenceType: self),
-                    TimePreferenceModel(time: 10, timeType: .min, preferenceType: self),
-                    TimePreferenceModel(time: 15, timeType: .min, preferenceType: self),
-                    TimePreferenceModel(time: 20, timeType: .min, preferenceType: self)
+                    TimerPreferenceModel(time: nil, timeType: .off, preferenceType: self),
+                    TimerPreferenceModel(time: 1, timeType: .min, preferenceType: self),
+                    TimerPreferenceModel(time: 5, timeType: .min, preferenceType: self),
+                    TimerPreferenceModel(time: 10, timeType: .min, preferenceType: self),
+                    TimerPreferenceModel(time: 15, timeType: .min, preferenceType: self),
+                    TimerPreferenceModel(time: 20, timeType: .min, preferenceType: self)
                 ]
             case .recordingDuration:
                 return [
-                    TimePreferenceModel(time: nil, timeType: .off, preferenceType: self),
-                    TimePreferenceModel(time: 5, timeType: .min, preferenceType: self),
-                    TimePreferenceModel(time: 1, timeType: .hours, preferenceType: self),
-                    TimePreferenceModel(time: 2, timeType: .hours, preferenceType: self),
-                    TimePreferenceModel(time: 3, timeType: .hours, preferenceType: self),
-                    TimePreferenceModel(time: 4, timeType: .hours, preferenceType: self),
-                    TimePreferenceModel(time: 5, timeType: .hours, preferenceType: self)
+                    TimerPreferenceModel(time: nil, timeType: .off, preferenceType: self),
+                    TimerPreferenceModel(time: 5, timeType: .min, preferenceType: self),
+                    TimerPreferenceModel(time: 1, timeType: .hours, preferenceType: self),
+                    TimerPreferenceModel(time: 2, timeType: .hours, preferenceType: self),
+                    TimerPreferenceModel(time: 3, timeType: .hours, preferenceType: self),
+                    TimerPreferenceModel(time: 4, timeType: .hours, preferenceType: self),
+                    TimerPreferenceModel(time: 5, timeType: .hours, preferenceType: self)
                 ]
             }
         }

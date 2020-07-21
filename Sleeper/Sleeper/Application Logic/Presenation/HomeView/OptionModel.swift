@@ -11,15 +11,15 @@ import Foundation
 final class OptionModel {
         
     let title: String
-    let preference: TimePreferenceModel.PreferenceType
-    var currentSelectedPreference: TimePreferenceModel
+    let preference: TimerPreferenceModel.PreferenceType
+    var currentSelectedPreference: TimerPreferenceModel
     
     var availablePreferencesTitlesInHumanFormat: [String] {
         return preference.preferences.map { $0.timeAndTimeType }
     }
     
     
-    init(title: String, preferences: TimePreferenceModel.PreferenceType, currentSelectedPreference: TimePreferenceModel) {
+    init(title: String, preferences: TimerPreferenceModel.PreferenceType, currentSelectedPreference: TimerPreferenceModel) {
         self.title = title
         self.preference = preferences
         self.currentSelectedPreference = currentSelectedPreference

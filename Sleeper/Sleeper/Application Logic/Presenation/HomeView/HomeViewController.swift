@@ -71,11 +71,11 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewProtocol {
     
-    func configureSoundTimerView(_ model: TimePreferenceModel) {
+    func configureSoundTimerView(_ model: TimerPreferenceModel) {
         soundTimerView.configure(model)
     }
     
-    func configureRecordingDurationView(_ model: TimePreferenceModel) {
+    func configureRecordingDurationView(_ model: TimerPreferenceModel) {
         recordingDurationView.configure(model)
     }
     
