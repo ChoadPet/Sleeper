@@ -40,10 +40,10 @@ final class HomePresenter {
     }
     
     func soundTimerPressed() {
-        
+        coordinator.timeViewController()
     }
     
     func recordingDurationPressed() {
-        
+        coordinator.timeViewController()
     }
 }
