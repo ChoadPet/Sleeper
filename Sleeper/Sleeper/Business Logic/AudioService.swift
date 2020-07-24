@@ -10,6 +10,10 @@ import AVFoundation
 
 final class AudioService {
     
+    var isPlaying: Bool {
+        return player?.isPlaying ?? false
+    }
+    
     private let player: AVAudioPlayer?
     
     
@@ -21,5 +25,9 @@ final class AudioService {
     
     func startPlay() {
         player?.play()
+    }
+    
+    func stopPlay() {
+        player?.stop()
     }
 }

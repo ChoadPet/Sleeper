@@ -79,6 +79,10 @@ extension HomeViewController: HomeViewProtocol {
         recordingDurationView.configure(model)
     }
     
+    func changePrimaryButton(_ title: String) {
+        primaryButton.setTitle(title, for: .normal)
+    }
+    
     func showAlert(title: String, actionsTitles: [String], completion: ((String) -> Void)?) {
         let alert = RSAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         let optionsActions = actionsTitles.map { // :(

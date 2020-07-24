@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE399F0324CADF9E004BB45B /* HomeModel.swift */; };
 		CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */; };
 		CE670BBD24C792BE00F749EB /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBC24C792BE00F749EB /* AudioService.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE399F0324CADF9E004BB45B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		CE670BBC24C792BE00F749EB /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		CE9B76BC24C60AC0006EDE16 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				CE399F0324CADF9E004BB45B /* HomeModel.swift */,
 				CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */,
 				CE9B76BD24C60AEA006EDE16 /* HomeViewController.swift */,
 				CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */,
@@ -290,6 +293,7 @@
 				CE670BBD24C792BE00F749EB /* AudioService.swift in Sources */,
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
+				CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
 				CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */,
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
