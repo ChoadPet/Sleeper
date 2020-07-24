@@ -11,9 +11,12 @@ import Foundation
 protocol HomeViewProtocol: class {
     
     func configureSoundTimerView(_ model: TimerPreferenceModel)
-    func configureRecordingDurationView(_ model: TimerPreferenceModel)
+    func configureRecordingView(_ model: TimerPreferenceModel)
     func changePrimaryButton(_ title: String)
-    func showAlert(title: String, actionsTitles: [String], completion: ((String) -> Void)?)
+    func changeTitleLabel(_ title: String)
+    func showAlert(title: String,
+                   actionsTitles: [String],
+                   completion: ((String) -> Void)?)
 }
 
 final class HomePresenter {
@@ -32,24 +35,25 @@ final class HomePresenter {
         self.view = view
         self.coordinator = coordinator
         self.userDefaultsService = userDefaultsService
-        let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName, withExtension: "m4a")!
+        let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
+                                      withExtension: "m4a")!
         self.audioService = try! AudioService(fileURL: fileURL)
         
         let soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer,
                                                    preferenceType: .soundTimer)
-        let recordingDurationModel = TimerPreferenceModel(string: userDefaultsService.recordingDuration,
-                                                          preferenceType: .recordingDuration)
+        let recordingModel = TimerPreferenceModel(string: userDefaultsService.recording,
+                                                  preferenceType: .recording)
         self.homeModel = HomeModel(titleState: .idle,
                                    buttonState: .play,
                                    soundTimerModel: soundTimerModel,
-                                   recordingDurationModel: recordingDurationModel)
+                                   recordingModel: recordingModel)
     }
     
     // MARK: Public API
     
     func viewDidLoad() {
         view.configureSoundTimerView(homeModel.soundTimerModel)
-        view.configureRecordingDurationView(homeModel.recordingDurationModel)
+        view.configureRecordingView(homeModel.recordingModel)
     }
     
     func primaryButtonPressed() {
@@ -74,12 +78,12 @@ final class HomePresenter {
         }
     }
     
-    func recordingDurationPressed() {
-        let title = homeModel.recordingDurationModel.preferenceType.title
-        let titles = homeModel.recordingDurationModel.preferenceType.preferencesTitles
+    func recordingPressed() {
+        let title = homeModel.recordingModel.preferenceType.title
+        let titles = homeModel.recordingModel.preferenceType.preferencesTitles
         view.showAlert(title: title, actionsTitles: titles) { chosenOption in
-            self.homeModel.recordingDurationModel = TimerPreferenceModel(string: chosenOption,
-                                                                         preferenceType: .recordingDuration)
+            self.homeModel.recordingModel = TimerPreferenceModel(string: chosenOption,
+                                                                 preferenceType: .recording)
         }
     }
     

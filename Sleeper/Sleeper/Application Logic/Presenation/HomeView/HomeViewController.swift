@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func recordingDurationAction(_ sender: UITapGestureRecognizer) {
-        presenter.recordingDurationPressed()
+        presenter.recordingPressed()
     }
     
 }
@@ -75,12 +75,16 @@ extension HomeViewController: HomeViewProtocol {
         soundTimerView.configure(model)
     }
     
-    func configureRecordingDurationView(_ model: TimerPreferenceModel) {
+    func configureRecordingView(_ model: TimerPreferenceModel) {
         recordingDurationView.configure(model)
     }
     
     func changePrimaryButton(_ title: String) {
         primaryButton.setTitle(title, for: .normal)
+    }
+    
+    func changeTitleLabel(_ title: String) {
+        titleLabel.text = title
     }
     
     func showAlert(title: String, actionsTitles: [String], completion: ((String) -> Void)?) {

@@ -14,7 +14,7 @@ final class TimerPreferenceModel {
     let timeType: TimeType
     let preferenceType: PreferenceType
     
-    var timeAndTimeType: String {
+    var title: String {
         guard let time = time else { return timeType.rawValue }
         return "\(time) \(timeType.rawValue)"
     }
@@ -60,17 +60,17 @@ extension TimerPreferenceModel {
     enum PreferenceType {
         
         case soundTimer
-        case recordingDuration
+        case recording
         
         var title: String {
             switch self {
             case .soundTimer: return Constants.soundTimer
-            case .recordingDuration: return Constants.recordingDuration
+            case .recording: return Constants.recording
             }
         }
         
         var preferencesTitles: [String] {
-            return preferences.map { $0.timeAndTimeType }
+            return preferences.map { $0.title }
         }
         
         private var preferences: [TimerPreferenceModel] {
@@ -84,7 +84,7 @@ extension TimerPreferenceModel {
                     TimerPreferenceModel(time: 15, timeType: .min, preferenceType: self),
                     TimerPreferenceModel(time: 20, timeType: .min, preferenceType: self)
                 ]
-            case .recordingDuration:
+            case .recording:
                 return [
                     TimerPreferenceModel(time: nil, timeType: .off, preferenceType: self),
                     TimerPreferenceModel(time: 5, timeType: .min, preferenceType: self),

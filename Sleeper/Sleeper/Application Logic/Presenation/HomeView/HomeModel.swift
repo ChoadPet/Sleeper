@@ -13,18 +13,18 @@ final class HomeModel {
     var titleState: TitleState
     var buttonState: PrimaryButtonState
     var soundTimerModel: TimerPreferenceModel
-    var recordingDurationModel: TimerPreferenceModel
+    var recordingModel: TimerPreferenceModel
     
     
     init(titleState: HomeModel.TitleState,
          buttonState: HomeModel.PrimaryButtonState,
          soundTimerModel: TimerPreferenceModel,
-         recordingDurationModel: TimerPreferenceModel) {
+         recordingModel: TimerPreferenceModel) {
         
         self.titleState = titleState
         self.buttonState = buttonState
         self.soundTimerModel = soundTimerModel
-        self.recordingDurationModel = recordingDurationModel
+        self.recordingModel = recordingModel
     }
     
 }

@@ -11,7 +11,7 @@ import Foundation
 private enum Keys: String {
     
     case soundTimer
-    case recordingDuration
+    case recording
 }
 
 class UserDefaultsService {
@@ -36,9 +36,9 @@ extension UserDefaultsService {
         set { save(newValue, forKey: .soundTimer) }
     }
     
-    var recordingDuration: String? {
-        get { value(forKey: .recordingDuration) as? String }
-        set { save(newValue, forKey: .recordingDuration) }
+    var recording: String? {
+        get { value(forKey: .recording) as? String }
+        set { save(newValue, forKey: .recording) }
     }
     
 }
