@@ -44,15 +44,6 @@ final class TimerPreferenceModel {
     
 }
 
-extension TimerPreferenceModel: Equatable {
-    
-    static func == (lhs: TimerPreferenceModel, rhs: TimerPreferenceModel) -> Bool {
-        return lhs.time == rhs.time &&
-            lhs.timeType == rhs.timeType &&
-            lhs.preferenceType == rhs.preferenceType
-    }
-}
-
 extension TimerPreferenceModel {
     
     enum TimeType: String {
@@ -108,4 +99,13 @@ extension TimerPreferenceModel {
         
     }
     
+}
+
+extension TimerPreferenceModel: Equatable {
+    
+    static func == (lhs: TimerPreferenceModel, rhs: TimerPreferenceModel) -> Bool {
+        return lhs.time == rhs.time &&
+            lhs.timeType == rhs.timeType &&
+            lhs.preferenceType == rhs.preferenceType
+    }
 }
