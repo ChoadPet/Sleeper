@@ -20,6 +20,7 @@ final class HomePresenter {
     private unowned var view: HomeViewProtocol
     private let coordinator: BaseCoordinator
     private let userDefaultsService: UserDefaultsService
+    private let audioService: AudioService
     
     private var soundTimerModel: TimerPreferenceModel {
         didSet {
@@ -37,9 +38,13 @@ final class HomePresenter {
     }
     
     init(view: HomeViewProtocol, coordinator: BaseCoordinator, userDefaultsService: UserDefaultsService) {
+        
         self.view = view
         self.coordinator = coordinator
         self.userDefaultsService = userDefaultsService
+        let fileURL = Bundle.main.url(forResource: "nature", withExtension: "m4a")!
+        self.audioService = try! AudioService(fileURL: fileURL)
+        
         self.soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer,
                                                          preferenceType: .soundTimer)
         self.recordingDurationModel = TimerPreferenceModel(string: userDefaultsService.recordingDuration,
@@ -54,7 +59,7 @@ final class HomePresenter {
     }
     
     func primaryButtonPressed() {
-        
+        audioService.startPlay()
     }
     
     func soundTimerPressed() {

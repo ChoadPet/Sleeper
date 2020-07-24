@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */; };
+		CE670BBD24C792BE00F749EB /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBC24C792BE00F749EB /* AudioService.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
 		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
 		CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		CE670BBC24C792BE00F749EB /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
 		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
 		CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
+				CE670BBC24C792BE00F749EB /* AudioService.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
 				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
+				CE670BBD24C792BE00F749EB /* AudioService.swift in Sources */,
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,

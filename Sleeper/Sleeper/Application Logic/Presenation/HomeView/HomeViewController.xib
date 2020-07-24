@@ -33,6 +33,9 @@
                         <constraint firstAttribute="height" constant="50" id="2dw-Sf-Tww"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="primaryButtonAction:" destination="-1" eventType="touchUpInside" id="jBA-vQ-4av"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-r6-9aB">
                     <rect key="frame" x="16" y="626" width="382" height="96"/>
