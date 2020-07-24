@@ -18,6 +18,9 @@ final class AudioService {
     
     
     init(fileURL: URL) throws {
+        try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: [.defaultToSpeaker])
+        try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+        
         self.player = try AVAudioPlayer(contentsOf: fileURL)
         self.player?.numberOfLoops = -1
         self.player?.prepareToPlay()
