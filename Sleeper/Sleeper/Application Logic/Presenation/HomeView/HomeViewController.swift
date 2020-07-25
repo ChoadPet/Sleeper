@@ -66,7 +66,6 @@ class HomeViewController: UIViewController {
     @objc private func recordingDurationAction(_ sender: UITapGestureRecognizer) {
         presenter.recordingPressed()
     }
-    
 }
 
 extension HomeViewController: HomeViewProtocol {
@@ -99,5 +98,4 @@ extension HomeViewController: HomeViewProtocol {
         alert.addActions(optionsActions)
         present(alert, animated: true)
     }
-    
 }

@@ -34,10 +34,6 @@ final class AudioRecordingService: NSObject {
         recorder?.prepareToRecord()
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     func record(duration: TimeInterval) {
         let isSuccessfully = recorder?.record(forDuration: duration)
         if (isSuccessfully ?? false) {
@@ -46,7 +42,6 @@ final class AudioRecordingService: NSObject {
             delegate?.audioServiceFinishRecording(self)
         }
     }
-    
 }
 
 extension AudioRecordingService: AVAudioRecorderDelegate {

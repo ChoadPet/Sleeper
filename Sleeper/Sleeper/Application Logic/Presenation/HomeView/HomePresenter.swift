@@ -67,7 +67,7 @@ final class HomePresenter {
     func primaryButtonPressed() {
         switch homeModel.buttonState {
         case .play:
-            audioPlayerService.play(for: 10)//homeModel.soundTimerModel.timeInterval)
+            audioPlayerService.play(for: homeModel.soundTimerModel.timeInterval)
         case .pause:
             audioPlayerService.pause()
         }
@@ -94,9 +94,6 @@ final class HomePresenter {
             self.homeModel.recordingModel = newModel
         }
     }
-    
-    // MARK: Private API
-    
 }
 
 // MARK: - HomeModelDelegate implementation
@@ -120,7 +117,6 @@ extension HomePresenter: HomeModelDelegate {
         userDefaultsService.recording = newModel.optionTitle
         view.configureRecordingView(newModel)
     }
-    
 }
 
 // MARK: - AudioServiceDelegate implementation
@@ -139,7 +135,7 @@ extension HomePresenter: AudioPlayingServiceDelegate {
     
     func audioServiceStopPlaying(_ audioService: AudioPlayingService) {
         if homeModel.canTransitionToRecording {
-            audioRecordingService.record(duration: 10)//homeModel.recordingModel.timeInterval)
+            audioRecordingService.record(duration: homeModel.recordingModel.timeInterval)
         } else {
             homeModel.applicationState = .idle
         }
@@ -155,12 +151,7 @@ extension HomePresenter: AudioRecordingServiceDelegate {
         homeModel.applicationState = .recording
     }
     
-    func audioServiceStopRecording(_ audioService: AudioRecordingService) {
-        
-    }
-    
     func audioServiceFinishRecording(_ audioService: AudioRecordingService) {
         homeModel.applicationState = .idle
     }
-    
 }
