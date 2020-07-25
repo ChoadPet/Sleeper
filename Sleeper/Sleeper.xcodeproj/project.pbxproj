@@ -110,8 +110,8 @@
 		CE9B76B924C60A8A006EDE16 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
-				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
 				CE670BBC24C792BE00F749EB /* AudioService.swift */,
+				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";

@@ -53,12 +53,19 @@ final class HomePresenter {
     
     func viewDidLoad() {
         homeModel.delegate = self
+        audioService.delegate = self
+        
         view.configureSoundTimerView(homeModel.soundTimerModel)
         view.configureRecordingView(homeModel.recordingModel)
     }
     
     func primaryButtonPressed() {
-        homeModel.buttonState.toggle()
+        switch homeModel.buttonState {
+        case .play:
+            audioService.startPlay(for: 10) //homeModel.soundTimerModel.timeInterval
+        case .pause:
+            audioService.stopPlay()
+        }
     }
     
     func soundTimerPressed() {
@@ -87,6 +94,8 @@ final class HomePresenter {
     
 }
 
+// MARK: - HomeModelDelegate implementation
+
 extension HomePresenter: HomeModelDelegate {
     
     func applicationStateChange(_ newState: HomeModel.ApplicationState) {
@@ -94,15 +103,6 @@ extension HomePresenter: HomeModelDelegate {
     }
     
     func buttonStateDidChange(_ newState: HomeModel.PrimaryButtonState) {
-        switch newState {
-        case .play:
-            homeModel.applicationState = .paused
-            audioService.stopPlay()
-        case .pause:
-            homeModel.applicationState = .playing
-            audioService.startPlay(for: 15)
-        }
-        
         view.changePrimaryButton(newState.title)
     }
     
@@ -116,5 +116,26 @@ extension HomePresenter: HomeModelDelegate {
         view.configureRecordingView(newModel)
     }
     
+}
+
+// MARK: - AudioServiceDelegate implementation
+
+extension HomePresenter: AudioServiceDelegate {
+    
+    func audioServiceStartPlaying(_ audioService: AudioService) {
+        homeModel.applicationState = .playing
+        homeModel.buttonState = .pause
+    }
+    
+    func audioServiceStopPlaying(_ audioService: AudioService) {
+        homeModel.applicationState = .paused
+        homeModel.buttonState = .play
+    }
+    
+    func audioServiceStartRecording(_ audioService: AudioService) {
+        if homeModel.canTransitionToRecording {
+            homeModel.applicationState = .recording
+        }
+    }
     
 }

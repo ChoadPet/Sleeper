@@ -30,6 +30,10 @@ final class HomeModel {
         didSet { delegate?.recordingDidChange(recordingModel) }
     }
     
+    var canTransitionToRecording: Bool {
+        return recordingModel.timeType != .off
+    }
+    
     weak var delegate: HomeModelDelegate?
     
     

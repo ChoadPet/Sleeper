@@ -33,13 +33,27 @@ final class TimerPreferenceModel {
         return preferenceType.preferences.map { $0.optionTitle }
     }
     
+    var timeInterval: TimeInterval {
+        switch timeType {
+        case .off:
+            return .infinity
+        case .min:
+            return TimeInterval(self.time! * 60)
+        case .hours:
+            return TimeInterval(self.time! * 60 * 60)
+        }
+    }
     
+    
+    /// Time is optional,  when `timeType = off`
     init(time: Int?, timeType: TimeType, preferenceType: PreferenceType) {
         self.time = time
         self.timeType = timeType
         self.preferenceType = preferenceType
     }
     
+    // :(
+    /// This init used when user choose some option from popup and when restore from `userDefaults`
     init(string: String?, preferenceType: PreferenceType) {
         let array = string?.components(separatedBy: .whitespaces)
         if let options = array, options.count > 1 {
