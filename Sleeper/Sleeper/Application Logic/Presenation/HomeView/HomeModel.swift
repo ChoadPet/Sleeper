@@ -8,34 +8,40 @@
 
 import Foundation
 
+protocol HomeModelDelegate: class {
+    func applicationStateChange(_ newState: HomeModel.ApplicationState)
+    func buttonStateDidChange(_ newState: HomeModel.PrimaryButtonState)
+    func soundTimerDidChange(_ newModel: TimerPreferenceModel)
+    func recordingDidChange(_ newModel: TimerPreferenceModel)
+}
+
 final class HomeModel {
- 
-    var titleState: TitleState
-    var buttonState: PrimaryButtonState
-    var soundTimerModel: TimerPreferenceModel
-    var recordingModel: TimerPreferenceModel
+    
+    var applicationState: ApplicationState {
+        didSet { delegate?.applicationStateChange(applicationState) }
+    }
+    var buttonState: PrimaryButtonState {
+        didSet { delegate?.buttonStateDidChange(buttonState) }
+    }
+    var soundTimerModel: TimerPreferenceModel {
+        didSet { delegate?.soundTimerDidChange(soundTimerModel) }
+    }
+    var recordingModel: TimerPreferenceModel {
+        didSet { delegate?.recordingDidChange(recordingModel) }
+    }
+    
+    weak var delegate: HomeModelDelegate?
     
     
-    init(titleState: HomeModel.TitleState,
-         buttonState: HomeModel.PrimaryButtonState,
+    init(applicationState: HomeModel.ApplicationState = .idle,
+         buttonState: HomeModel.PrimaryButtonState = .play,
          soundTimerModel: TimerPreferenceModel,
          recordingModel: TimerPreferenceModel) {
         
-        self.titleState = titleState
+        self.applicationState = applicationState
         self.buttonState = buttonState
         self.soundTimerModel = soundTimerModel
         self.recordingModel = recordingModel
-    }
-    
-}
-
-extension HomeModel {
-    
-    enum TitleState: String {
-        case idle
-        case playing
-        case recording
-        case paused
     }
     
 }
@@ -62,3 +68,22 @@ extension HomeModel {
     
 }
 
+extension HomeModel {
+    
+    enum ApplicationState {
+        case idle
+        case playing
+        case paused
+        case recording
+        
+        var title: String {
+            switch self {
+            case .idle: return Constants.idle
+            case .playing: return Constants.playing
+            case .paused: return Constants.paused
+            case .recording: return Constants.recording
+            }
+        }
+        
+    }
+}

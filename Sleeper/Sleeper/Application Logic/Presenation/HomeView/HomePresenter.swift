@@ -9,7 +9,6 @@
 import Foundation
 
 protocol HomeViewProtocol: class {
-    
     func configureSoundTimerView(_ model: TimerPreferenceModel)
     func configureRecordingView(_ model: TimerPreferenceModel)
     func changePrimaryButton(_ title: String)
@@ -23,9 +22,9 @@ final class HomePresenter {
     
     private unowned var view: HomeViewProtocol
     private let coordinator: BaseCoordinator
+    private let homeModel: HomeModel
     private let userDefaultsService: UserDefaultsService
     private let audioService: AudioService
-    private let homeModel: HomeModel
     
     
     init(view: HomeViewProtocol,
@@ -34,59 +33,88 @@ final class HomePresenter {
         
         self.view = view
         self.coordinator = coordinator
-        self.userDefaultsService = userDefaultsService
-        let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
-                                      withExtension: "m4a")!
-        self.audioService = try! AudioService(fileURL: fileURL)
         
         let soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer,
                                                    preferenceType: .soundTimer)
         let recordingModel = TimerPreferenceModel(string: userDefaultsService.recording,
                                                   preferenceType: .recording)
-        self.homeModel = HomeModel(titleState: .idle,
-                                   buttonState: .play,
-                                   soundTimerModel: soundTimerModel,
+        self.homeModel = HomeModel(soundTimerModel: soundTimerModel,
                                    recordingModel: recordingModel)
+        
+        self.userDefaultsService = userDefaultsService
+        
+        let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
+                                      withExtension: "m4a")!
+        self.audioService = try! AudioService(fileURL: fileURL)
+        
     }
     
     // MARK: Public API
     
     func viewDidLoad() {
+        homeModel.delegate = self
         view.configureSoundTimerView(homeModel.soundTimerModel)
         view.configureRecordingView(homeModel.recordingModel)
     }
     
     func primaryButtonPressed() {
-        switch homeModel.buttonState {
-        case .play:
-            audioService.startPlay()
-        case .pause:
-            audioService.stopPlay()
-        }
         homeModel.buttonState.toggle()
-        
-        /// Update view after we change `buttonState`
-        view.changePrimaryButton(homeModel.buttonState.title)
     }
     
     func soundTimerPressed() {
         let title = homeModel.soundTimerModel.preferenceType.title
         let titles = homeModel.soundTimerModel.preferenceType.preferencesTitles
         view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
-            self.homeModel.soundTimerModel = TimerPreferenceModel(string: chosenOption,
-                                                                  preferenceType: .soundTimer)
+            let newModel = TimerPreferenceModel(string: chosenOption,
+                                                preferenceType: .soundTimer)
+            guard newModel != self.homeModel.soundTimerModel else { return }
+            self.homeModel.soundTimerModel = newModel
         }
     }
     
     func recordingPressed() {
         let title = homeModel.recordingModel.preferenceType.title
         let titles = homeModel.recordingModel.preferenceType.preferencesTitles
-        view.showAlert(title: title, actionsTitles: titles) { chosenOption in
-            self.homeModel.recordingModel = TimerPreferenceModel(string: chosenOption,
-                                                                 preferenceType: .recording)
+        view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
+            let newModel = TimerPreferenceModel(string: chosenOption,
+                                                preferenceType: .recording)
+            guard newModel != self.homeModel.recordingModel else { return }
+            self.homeModel.recordingModel = newModel
         }
     }
     
     // MARK: Private API
+    
+}
+
+extension HomePresenter: HomeModelDelegate {
+    
+    func applicationStateChange(_ newState: HomeModel.ApplicationState) {
+        view.changeTitleLabel(newState.title)
+    }
+    
+    func buttonStateDidChange(_ newState: HomeModel.PrimaryButtonState) {
+        switch newState {
+        case .play:
+            homeModel.applicationState = .paused
+            audioService.stopPlay()
+        case .pause:
+            homeModel.applicationState = .playing
+            audioService.startPlay(for: 15)
+        }
+        
+        view.changePrimaryButton(newState.title)
+    }
+    
+    func soundTimerDidChange(_ newModel: TimerPreferenceModel) {
+        userDefaultsService.soundTimer = newModel.title
+        view.configureSoundTimerView(newModel)
+    }
+    
+    func recordingDidChange(_ newModel: TimerPreferenceModel) {
+        userDefaultsService.recording = newModel.title
+        view.configureRecordingView(newModel)
+    }
+    
     
 }
