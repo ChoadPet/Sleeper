@@ -67,7 +67,7 @@ final class HomePresenter {
     func primaryButtonPressed() {
         switch homeModel.buttonState {
         case .play:
-            audioPlayerService.play(for: homeModel.soundTimerModel.timeInterval)
+            audioPlayerService.play(for: 10)//homeModel.soundTimerModel.timeInterval)
         case .pause:
             audioPlayerService.pause()
         }
@@ -139,7 +139,7 @@ extension HomePresenter: AudioPlayingServiceDelegate {
     
     func audioServiceStopPlaying(_ audioService: AudioPlayingService) {
         if homeModel.canTransitionToRecording {
-            audioRecordingService.record(duration: homeModel.recordingModel.timeInterval)
+            audioRecordingService.record(duration: 10)//homeModel.recordingModel.timeInterval)
         } else {
             homeModel.applicationState = .idle
         }
