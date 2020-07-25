@@ -11,6 +11,7 @@ import AVFoundation
 protocol AudioServiceDelegate: class {
     func audioServiceStartPlaying(_ audioService: AudioService)
     func audioServiceStopPlaying(_ audioService: AudioService)
+    func audioServicePausePlaying(_ audioService: AudioService)
     func audioServiceStartRecording(_ audioService: AudioService)
 }
 
@@ -18,47 +19,88 @@ final class AudioService {
     
     weak var delegate: AudioServiceDelegate?
     
+    private let session: AVAudioSession
     private let player: AVAudioPlayer?
+    
     private var currentTimer: Timer?
     
     
     init(fileURL: URL) throws {
-        try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: [.defaultToSpeaker])
-        try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+        session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playAndRecord, options: [.defaultToSpeaker, .mixWithOthers])
+        try session.setActive(true)
         
-        self.player = try AVAudioPlayer(contentsOf: fileURL)
-        self.player?.numberOfLoops = -1
-        self.player?.prepareToPlay()
+        player = try AVAudioPlayer(contentsOf: fileURL)
+        player?.numberOfLoops = -1
+        player?.prepareToPlay()
+        
+        registrateInterruptionNotification()
     }
     
-    func startPlay(for duration: TimeInterval) {
-        print("Start playing for duration: \(duration)")
+    /// When `shouldStartTimer == false`, `duration` parameter is ignoring
+    func play(for duration: TimeInterval, shouldStartTimer: Bool = true) {
         player?.play()
         delegate?.audioServiceStartPlaying(self)
         
-        invalidateTimer()
-        startPlayingTimer(duration: duration)
+        if shouldStartTimer {
+            invalidateTimer()
+            startPlayingTimer(duration: duration)
+        }
     }
     
-    func stopPlay() {
-        print("Stop play")
+    func stop() {
         player?.stop()
+        player?.currentTime = 0
         delegate?.audioServiceStopPlaying(self)
         
         invalidateTimer()
     }
     
+    func pause() {
+        player?.pause()
+        delegate?.audioServicePausePlaying(self)
+    }
+    
     // MARK: Private API
     
     private func startPlayingTimer(duration: TimeInterval) {
-        print("Starting Timer")
         currentTimer = Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
-            self.stopPlay()
+            self.stop()
         }
     }
     
     private func invalidateTimer() {
-        print("Invalidation Timer")
         currentTimer?.invalidate()
     }
+    
+    // MARK: Handling interruption
+    
+    private func registrateInterruptionNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleInterruption),
+                                               name: AVAudioSession.interruptionNotification,
+                                               object: nil)
+    }
+    
+    @objc private func handleInterruption(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
+            let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
+                return
+        }
+        switch type {
+        case .began:
+            pause()
+        case .ended:
+            guard let optionsValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt else { return }
+            let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+            if options.contains(.shouldResume) {
+                play(for: .infinity, shouldStartTimer: false)
+            } else {
+                stop()
+            }
+        default: break
+        }
+    }
+    
 }

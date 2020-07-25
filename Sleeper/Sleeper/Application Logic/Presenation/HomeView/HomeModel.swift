@@ -17,6 +17,8 @@ protocol HomeModelDelegate: class {
 
 final class HomeModel {
     
+    weak var delegate: HomeModelDelegate?
+    
     var applicationState: ApplicationState {
         didSet { delegate?.applicationStateChange(applicationState) }
     }
@@ -33,8 +35,6 @@ final class HomeModel {
     var canTransitionToRecording: Bool {
         return recordingModel.timeType != .off
     }
-    
-    weak var delegate: HomeModelDelegate?
     
     
     init(applicationState: HomeModel.ApplicationState = .idle,
