@@ -24,7 +24,7 @@ final class HomePresenter {
     private let coordinator: BaseCoordinator
     private let homeModel: HomeModel
     private let userDefaultsService: UserDefaultsService
-    private let audioService: AudioService
+    private let audioService: AudioPlayingService
     
     
     init(view: HomeViewProtocol,
@@ -45,7 +45,7 @@ final class HomePresenter {
         
         let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
                                       withExtension: "m4a")!
-        self.audioService = try! AudioService(fileURL: fileURL)
+        self.audioService = try! AudioPlayingService(fileURL: fileURL)
         
     }
     
@@ -120,27 +120,22 @@ extension HomePresenter: HomeModelDelegate {
 
 // MARK: - AudioServiceDelegate implementation
 
-extension HomePresenter: AudioServiceDelegate {
+extension HomePresenter: AudioPlayingServiceDelegate {
     
-    func audioServiceStartPlaying(_ audioService: AudioService) {
+    func audioServiceStartPlaying(_ audioService: AudioPlayingService) {
         homeModel.applicationState = .playing
         homeModel.buttonState = .pause
     }
     
-    func audioServicePausePlaying(_ audioService: AudioService) {
+    func audioServicePausePlaying(_ audioService: AudioPlayingService) {
         homeModel.applicationState = .paused
         homeModel.buttonState = .play
     }
     
-    func audioServiceStopPlaying(_ audioService: AudioService) {
+    func audioServiceStopPlaying(_ audioService: AudioPlayingService) {
         if !homeModel.canTransitionToRecording {
             homeModel.applicationState = .idle
         }
         homeModel.buttonState = .play
     }
-    
-    func audioServiceStartRecording(_ audioService: AudioService) {
-        homeModel.applicationState = .recording
-    }
-    
 }
