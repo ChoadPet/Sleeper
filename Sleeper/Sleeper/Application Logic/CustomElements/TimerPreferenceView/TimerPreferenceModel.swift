@@ -14,9 +14,23 @@ final class TimerPreferenceModel {
     let timeType: TimeType
     let preferenceType: PreferenceType
     
+    /// Title used for `soundTimer` and `recordingDuration` view titles
     var title: String {
+        switch preferenceType {
+        case .soundTimer: return Constants.soundTimer
+        case .recording: return Constants.recording
+        }
+    }
+    
+    /// Name of option, example: `off`, `1 min` etc
+    var optionTitle: String {
         guard let time = time else { return timeType.rawValue }
         return "\(time) \(timeType.rawValue)"
+    }
+    
+    /// Titles used in available option for `UIAlertController`
+    var optionsTitles: [String] {
+        return preferenceType.preferences.map { $0.optionTitle }
     }
     
     
@@ -62,18 +76,7 @@ extension TimerPreferenceModel {
         case soundTimer
         case recording
         
-        var title: String {
-            switch self {
-            case .soundTimer: return Constants.soundTimer
-            case .recording: return Constants.recording
-            }
-        }
-        
-        var preferencesTitles: [String] {
-            return preferences.map { $0.title }
-        }
-        
-        private var preferences: [TimerPreferenceModel] {
+        var preferences: [TimerPreferenceModel] {
             switch self {
             case .soundTimer:
                 return [

@@ -62,8 +62,8 @@ final class HomePresenter {
     }
     
     func soundTimerPressed() {
-        let title = homeModel.soundTimerModel.preferenceType.title
-        let titles = homeModel.soundTimerModel.preferenceType.preferencesTitles
+        let title = homeModel.soundTimerModel.title
+        let titles = homeModel.soundTimerModel.optionsTitles
         view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
             let newModel = TimerPreferenceModel(string: chosenOption,
                                                 preferenceType: .soundTimer)
@@ -73,8 +73,8 @@ final class HomePresenter {
     }
     
     func recordingPressed() {
-        let title = homeModel.recordingModel.preferenceType.title
-        let titles = homeModel.recordingModel.preferenceType.preferencesTitles
+        let title = homeModel.recordingModel.title
+        let titles = homeModel.recordingModel.optionsTitles
         view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
             let newModel = TimerPreferenceModel(string: chosenOption,
                                                 preferenceType: .recording)
@@ -107,12 +107,12 @@ extension HomePresenter: HomeModelDelegate {
     }
     
     func soundTimerDidChange(_ newModel: TimerPreferenceModel) {
-        userDefaultsService.soundTimer = newModel.title
+        userDefaultsService.soundTimer = newModel.optionTitle
         view.configureSoundTimerView(newModel)
     }
     
     func recordingDidChange(_ newModel: TimerPreferenceModel) {
-        userDefaultsService.recording = newModel.title
+        userDefaultsService.recording = newModel.optionTitle
         view.configureRecordingView(newModel)
     }
     

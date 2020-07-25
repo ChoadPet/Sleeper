@@ -53,8 +53,8 @@ class TimerPreferenceView: RSBaseView {
                 label.text = text
             }, completion: nil)
         }
-        animate(titleLabel, model.preferenceType.title)
-        animate(descriptionLabel, model.title)
+        animate(titleLabel, model.title)
+        animate(descriptionLabel, model.optionTitle)
     }
     
 }
