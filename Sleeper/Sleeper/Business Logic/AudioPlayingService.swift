@@ -18,19 +18,19 @@ final class AudioPlayingService {
     
     weak var delegate: AudioPlayingServiceDelegate?
     
-    private let session: AVAudioSession
+    private let audioSession: AVAudioSession
     private let player: AVAudioPlayer?
     
     private var currentTimer: Timer?
     
     
     init(fileURL: URL) throws {
-        session = AVAudioSession.sharedInstance()
+        audioSession = AVAudioSession.sharedInstance()
         
         /// Insane, that Apple does not mentioned, `.mixWithOthers`- option needed for background,
         /// sound won't start playing after incoming call in background mode
-        try session.setCategory(.playAndRecord, options: [.defaultToSpeaker, .mixWithOthers])
-        try session.setActive(true)
+        try audioSession.setCategory(.playAndRecord, options: [.defaultToSpeaker, .mixWithOthers])
+        try audioSession.setActive(true)
         
         player = try AVAudioPlayer(contentsOf: fileURL)
         player?.numberOfLoops = -1
@@ -39,11 +39,17 @@ final class AudioPlayingService {
         registrateInterruptionNotification()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     /// When `shouldStartTimer == false`, `duration` parameter is ignoring
     func play(for duration: TimeInterval, shouldStartTimer: Bool = true) {
         player?.play()
         delegate?.audioServiceStartPlaying(self)
         
+        /// Don't like this property as well :(
+        /// Needed only when session is interrupted
         if shouldStartTimer {
             invalidateTimer()
             startPlayingTimer(duration: duration)
@@ -85,7 +91,8 @@ final class AudioPlayingService {
     }
     
     @objc private func handleInterruption(notification: Notification) {
-        guard let userInfo = notification.userInfo,
+        guard (player?.isPlaying ?? false),
+            let userInfo = notification.userInfo,
             let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
             let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
                 return
