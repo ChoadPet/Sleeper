@@ -12,7 +12,7 @@ final class BaseCoordinator {
     
     let router: MainRouter
     
-    private var appCoordinator: AppCoordinator
+    private let appCoordinator: AppCoordinator
     
     
     init(appCoordinator: AppCoordinator, router: MainRouter) {

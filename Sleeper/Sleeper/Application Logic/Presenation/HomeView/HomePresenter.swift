@@ -20,7 +20,7 @@ protocol HomeViewProtocol: class {
 
 final class HomePresenter {
     
-    private unowned var view: HomeViewProtocol
+    private unowned let view: HomeViewProtocol
     private let coordinator: BaseCoordinator
     private let homeModel: HomeModel
     private let userDefaultsService: UserDefaultsService
