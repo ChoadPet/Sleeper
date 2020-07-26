@@ -18,20 +18,12 @@ final class AudioPlayingService {
     
     weak var delegate: AudioPlayingServiceDelegate?
     
-    private let audioSession: AVAudioSession
     private let player: AVAudioPlayer?
     
     private var currentTimer: Timer?
     
     
     init(fileURL: URL) throws {
-        audioSession = AVAudioSession.sharedInstance()
-        
-        /// Insane, that Apple does not mentioned, `.mixWithOthers`- option needed for background,
-        /// sound won't start playing after incoming call in background mode
-        try audioSession.setCategory(.playAndRecord, options: [.defaultToSpeaker, .mixWithOthers])
-        try audioSession.setActive(true)
-        
         player = try AVAudioPlayer(contentsOf: fileURL)
         player?.numberOfLoops = -1
         player?.prepareToPlay()
