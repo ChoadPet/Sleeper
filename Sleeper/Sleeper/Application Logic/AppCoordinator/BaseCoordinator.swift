@@ -10,7 +10,7 @@ import UIKit
 
 final class BaseCoordinator {
     
-    var router: MainRouter
+    let router: MainRouter
     
     private var appCoordinator: AppCoordinator
     
