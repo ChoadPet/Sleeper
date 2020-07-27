@@ -6,7 +6,7 @@
 //  Copyright © 2020 ArkadeGames. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 final class BaseCoordinator {
     
