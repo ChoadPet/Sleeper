@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainRouter {
+class Router {
     
     let navigationController: RSNavigationController
     

@@ -8,14 +8,14 @@
 
 import Foundation
 
-final class BaseCoordinator {
+final class Coordinator {
     
-    let router: MainRouter
+    let router: Router
     
     private let appCoordinator: AppCoordinator
     
     
-    init(appCoordinator: AppCoordinator, router: MainRouter) {
+    init(appCoordinator: AppCoordinator, router: Router) {
         self.appCoordinator = appCoordinator
         self.router = router
     }
@@ -31,7 +31,7 @@ final class BaseCoordinator {
 
 // MARK: Creation viewController's
 
-extension BaseCoordinator {
+extension Coordinator {
     
     private func createHomeViewController() -> HomeViewController {
         let viewController = HomeViewController.init(nibName: HomeViewController.className, bundle: nil)

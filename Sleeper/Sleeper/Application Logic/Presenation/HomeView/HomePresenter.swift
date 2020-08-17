@@ -21,7 +21,7 @@ protocol HomeViewProtocol: class {
 final class HomePresenter {
     
     private unowned let view: HomeViewProtocol
-    private let coordinator: BaseCoordinator
+    private let coordinator: Coordinator
     private let homeModel: HomeModel
     private let userDefaultsService: UserDefaultsService
     private let audioPlayerService: AudioPlayingService
@@ -29,7 +29,7 @@ final class HomePresenter {
     
     
     init(view: HomeViewProtocol,
-         coordinator: BaseCoordinator,
+         coordinator: Coordinator,
          userDefaultsService: UserDefaultsService) {
         
         self.view = view

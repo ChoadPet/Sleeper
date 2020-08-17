@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE31EA0224EAA8CD006BF246 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31EA0124EAA8CD006BF246 /* Configurator.swift */; };
 		CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE399F0324CADF9E004BB45B /* HomeModel.swift */; };
 		CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */; };
 		CE670BBD24C792BE00F749EB /* AudioPlayingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
 		CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */; };
 		CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */; };
-		CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B324C609A1006EDE16 /* MainRouter.swift */; };
-		CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */; };
+		CE9B76B624C609A1006EDE16 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B324C609A1006EDE16 /* Router.swift */; };
+		CE9B76B724C609A1006EDE16 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76B424C609A1006EDE16 /* Coordinator.swift */; };
 		CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76BD24C60AEA006EDE16 /* HomeViewController.swift */; };
 		CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */; };
 		CE9B76C224C60AFA006EDE16 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */; };
@@ -36,14 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE31EA0124EAA8CD006BF246 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		CE399F0324CADF9E004BB45B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayingService.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
 		CE690E4524C6228F007DF3C2 /* TimerPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceView.swift; sourceTree = "<group>"; };
 		CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		CE9B76B324C609A1006EDE16 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		CE9B76B324C609A1006EDE16 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE9B76B424C609A1006EDE16 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE9B76BD24C60AEA006EDE16 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -87,21 +89,22 @@
 			path = TimerPreferenceView;
 			sourceTree = "<group>";
 		};
-		CE9B76B124C609A1006EDE16 /* AppCoordinator */ = {
+		CE9B76B124C609A1006EDE16 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				CE9B76B224C609A1006EDE16 /* AppCoordinator.swift */,
-				CE9B76B424C609A1006EDE16 /* BaseCoordinator.swift */,
-				CE9B76B324C609A1006EDE16 /* MainRouter.swift */,
+				CE9B76B424C609A1006EDE16 /* Coordinator.swift */,
+				CE9B76B324C609A1006EDE16 /* Router.swift */,
+				CE31EA0124EAA8CD006BF246 /* Configurator.swift */,
 			);
-			path = AppCoordinator;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		CE9B76B824C60A83006EDE16 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
 				CEDBDA2624C6173D00693DAA /* Constants */,
-				CE9B76B124C609A1006EDE16 /* AppCoordinator */,
+				CE9B76B124C609A1006EDE16 /* Coordinator */,
 				CE9B76BB24C60ABB006EDE16 /* Presenation */,
 				CEDBDA2D24C61CFD00693DAA /* CustomElements */,
 				CEDBDA1B24C611E800693DAA /* Extension */,
@@ -289,8 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9B76C224C60AFA006EDE16 /* HomePresenter.swift in Sources */,
-				CE9B76B624C609A1006EDE16 /* MainRouter.swift in Sources */,
-				CE9B76B724C609A1006EDE16 /* BaseCoordinator.swift in Sources */,
+				CE9B76B624C609A1006EDE16 /* Router.swift in Sources */,
+				CE9B76B724C609A1006EDE16 /* Coordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
 				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
 				CE670BBD24C792BE00F749EB /* AudioPlayingService.swift in Sources */,
@@ -300,6 +303,7 @@
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
 				CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */,
 				CEA346B024CC6C92005ECBAD /* AudioRecordingService.swift in Sources */,
+				CE31EA0224EAA8CD006BF246 /* Configurator.swift in Sources */,
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
 				CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */,
