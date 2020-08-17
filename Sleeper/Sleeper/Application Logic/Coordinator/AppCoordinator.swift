@@ -12,6 +12,7 @@ final class AppCoordinator {
     
     private let window: UIWindow
     
+    
     init(window: UIWindow) {
         self.window = window
     }
@@ -19,7 +20,7 @@ final class AppCoordinator {
     // MARK: Public API
     
     func makeRootAccordingToUser() {
-        let viewController = welcomeViewController()
+        let viewController = homeViewController()
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }
@@ -28,7 +29,7 @@ final class AppCoordinator {
 
 extension AppCoordinator {
     
-    private func welcomeViewController() -> RSNavigationController {
+    private func homeViewController() -> RSNavigationController {
         let navigation = RSNavigationController()
         let router = Router(navigationController: navigation)
         let coordinator = Coordinator(appCoordinator: self, router: router)

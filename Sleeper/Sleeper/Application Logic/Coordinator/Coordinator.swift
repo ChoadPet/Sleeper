@@ -6,41 +6,28 @@
 //  Copyright © 2020 ArkadeGames. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class Coordinator {
     
     let router: Router
     
     private let appCoordinator: AppCoordinator
+    private var configurator: Configurator!
     
     
     init(appCoordinator: AppCoordinator, router: Router) {
         self.appCoordinator = appCoordinator
         self.router = router
+        
+        /// Yes, there is retain cycle, should be fixed in the future
+        self.configurator = Configurator(coordinator: self)
     }
     
     // MARK: Initial home controller
     
-    func homeViewController() -> HomeViewController {
-        let viewController = createHomeViewController()
-        return viewController
-    }
-    
-}
-
-// MARK: Creation viewController's
-
-extension Coordinator {
-    
-    private func createHomeViewController() -> HomeViewController {
-        let viewController = HomeViewController.init(nibName: HomeViewController.className, bundle: nil)
-        let userDefaultsService = UserDefaultsService.shared
-        let presenter = HomePresenter(view: viewController,
-                                      coordinator: self,
-                                      userDefaultsService: userDefaultsService)
-        viewController.presenter = presenter
-        return viewController
+    func homeViewController() -> UIViewController {
+        return configurator.configure(.home)
     }
     
 }
