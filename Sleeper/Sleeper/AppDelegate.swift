@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window!.overrideUserInterfaceStyle = .dark
+        window!.tintColor = UIColor.accent
         appCoordinator = AppCoordinator(window: window!)
         appCoordinator.makeRootAccordingToUser()
         

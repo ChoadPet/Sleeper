@@ -23,25 +23,25 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var soundTimerView: TimerPreferenceView! {
         didSet {
-            soundTimerView.roundCorners(radius: 8)
+            soundTimerView.roundCorners(radius: .custom(radius: 8))
             soundTimerView.addTapGestureRecognizer(target: self, selector: #selector(soundTimerAction))
             soundTimerView.backgroundColor = .darkGray
         }
     }
-    @IBOutlet weak var recordingDurationView: TimerPreferenceView! {
-        didSet {
-            recordingDurationView.roundCorners(radius: 8)
-            recordingDurationView.addTapGestureRecognizer(target: self, selector: #selector(recordingDurationAction))
-            recordingDurationView.backgroundColor = .darkGray
-        }
-    }
     @IBOutlet weak var primaryButton: UIButton! {
         didSet {
-            primaryButton.roundCorners(radius: 8)
             primaryButton.setTitle(Constants.play, for: .normal)
-            primaryButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            primaryButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
             primaryButton.setTitleColor(.white, for: .normal)
             primaryButton.setBackgroundImage(UIImage(color: UIColor.accent, size: CGSize(width: 1, height: 1)), for: .normal)
+        }
+    }
+    @IBOutlet weak var secondaryButton: UIButton! {
+        didSet {
+            secondaryButton.setTitle(Constants.cancel, for: .normal)
+            secondaryButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+            secondaryButton.setTitleColor(.white, for: .normal)
+            secondaryButton.setBackgroundImage(UIImage(color: UIColor.systemGray5, size: CGSize(width: 1, height: 1)), for: .normal)
         }
     }
     
@@ -53,29 +53,42 @@ class HomeViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        primaryButton.roundCorners(radius: .circle)
+        secondaryButton.roundCorners(radius: .circle)
+    }
+    
     // MARK: Actions
 
     @IBAction func primaryButtonAction(_ sender: UIButton) {
         presenter.primaryButtonPressed()
     }
     
+    @IBAction func secondaryButtonAction(_ sender: UIButton) {
+        
+    }
+    
     @objc private func soundTimerAction(_ sender: UITapGestureRecognizer) {
         presenter.soundTimerPressed()
     }
     
-    @objc private func recordingDurationAction(_ sender: UITapGestureRecognizer) {
-        presenter.recordingPressed()
+    @objc private func historyAction(_ sender: UIBarButtonItem) {
+            
     }
 }
 
 extension HomeViewController: HomeViewProtocol {
     
-    func configureSoundTimerView(_ model: TimerPreferenceModel) {
-        soundTimerView.configure(model)
+    func initNavigation() {
+        let image = UIImage(systemName: "folder.badge.person.crop")
+        let barItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(historyAction))
+        navigationItem.rightBarButtonItem = barItem
     }
     
-    func configureRecordingView(_ model: TimerPreferenceModel) {
-        recordingDurationView.configure(model)
+    func configureSoundTimerView(_ model: TimerPreferenceModel) {
+        soundTimerView.configure(model)
     }
     
     func changePrimaryButton(_ title: String) {

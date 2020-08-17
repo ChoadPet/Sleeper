@@ -12,7 +12,6 @@ protocol HomeModelDelegate: class {
     func applicationStateChange(_ newState: HomeModel.ApplicationState)
     func buttonStateDidChange(_ newState: HomeModel.PrimaryButtonState)
     func soundTimerDidChange(_ newModel: TimerPreferenceModel)
-    func recordingDidChange(_ newModel: TimerPreferenceModel)
 }
 
 final class HomeModel {
@@ -28,26 +27,16 @@ final class HomeModel {
     var soundTimerModel: TimerPreferenceModel {
         didSet { delegate?.soundTimerDidChange(soundTimerModel) }
     }
-    var recordingModel: TimerPreferenceModel {
-        didSet { delegate?.recordingDidChange(recordingModel) }
-    }
-    
-    var canTransitionToRecording: Bool {
-        return recordingModel.timeType != .off
-    }
     
     
     init(applicationState: HomeModel.ApplicationState = .idle,
          buttonState: HomeModel.PrimaryButtonState = .play,
-         soundTimerModel: TimerPreferenceModel,
-         recordingModel: TimerPreferenceModel) {
+         soundTimerModel: TimerPreferenceModel) {
         
         self.applicationState = applicationState
         self.buttonState = buttonState
         self.soundTimerModel = soundTimerModel
-        self.recordingModel = recordingModel
     }
-    
 }
 
 extension HomeModel {
@@ -69,7 +58,6 @@ extension HomeModel {
             self = self == .play ? .pause : .play
         }
     }
-    
 }
 
 extension HomeModel {
@@ -78,14 +66,12 @@ extension HomeModel {
         case idle
         case playing
         case paused
-        case recording
         
         var title: String {
             switch self {
             case .idle: return Constants.idle
             case .playing: return Constants.playing
             case .paused: return Constants.paused
-            case .recording: return Constants.recording
             }
         }
         

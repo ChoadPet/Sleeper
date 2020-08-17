@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol HomeViewProtocol: class {
+protocol HomeViewProtocol: class, NavigationInitializable {
     func configureSoundTimerView(_ model: TimerPreferenceModel)
-    func configureRecordingView(_ model: TimerPreferenceModel)
     func changePrimaryButton(_ title: String)
     func changeTitleLabel(_ title: String)
     func showAlert(title: String,
@@ -25,7 +24,6 @@ final class HomePresenter {
     private let homeModel: HomeModel
     private let userDefaultsService: UserDefaultsService
     private let audioPlayerService: AudioPlayingService
-    private let audioRecordingService: AudioRecordingService
     
     
     init(view: HomeViewProtocol,
@@ -37,20 +35,13 @@ final class HomePresenter {
         
         let soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer,
                                                    preferenceType: .soundTimer)
-        let recordingModel = TimerPreferenceModel(string: userDefaultsService.recording,
-                                                  preferenceType: .recording)
-        self.homeModel = HomeModel(soundTimerModel: soundTimerModel,
-                                   recordingModel: recordingModel)
+        self.homeModel = HomeModel(soundTimerModel: soundTimerModel)
         
         self.userDefaultsService = userDefaultsService
         
-        var fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
+        let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
                                       withExtension: "m4a")!
         self.audioPlayerService = try! AudioPlayingService(fileURL: fileURL)
-        
-        fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            .first!.appendingPathComponent("recording \(Date()).m4a")
-        self.audioRecordingService = try! AudioRecordingService(fileURL: fileURL)
     }
     
     // MARK: Public API
@@ -58,10 +49,9 @@ final class HomePresenter {
     func viewDidLoad() {
         homeModel.delegate = self
         audioPlayerService.delegate = self
-        audioRecordingService.delegate = self
         
+        view.initNavigation()
         view.configureSoundTimerView(homeModel.soundTimerModel)
-        view.configureRecordingView(homeModel.recordingModel)
     }
     
     func primaryButtonPressed() {
@@ -83,17 +73,6 @@ final class HomePresenter {
             self.homeModel.soundTimerModel = newModel
         }
     }
-    
-    func recordingPressed() {
-        let title = homeModel.recordingModel.title
-        let titles = homeModel.recordingModel.optionsTitles
-        view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
-            let newModel = TimerPreferenceModel(string: chosenOption,
-                                                preferenceType: .recording)
-            guard newModel != self.homeModel.recordingModel else { return }
-            self.homeModel.recordingModel = newModel
-        }
-    }
 }
 
 // MARK: - HomeModelDelegate implementation
@@ -112,11 +91,6 @@ extension HomePresenter: HomeModelDelegate {
         userDefaultsService.soundTimer = newModel.optionTitle
         view.configureSoundTimerView(newModel)
     }
-    
-    func recordingDidChange(_ newModel: TimerPreferenceModel) {
-        userDefaultsService.recording = newModel.optionTitle
-        view.configureRecordingView(newModel)
-    }
 }
 
 // MARK: - AudioServiceDelegate implementation
@@ -134,24 +108,7 @@ extension HomePresenter: AudioPlayingServiceDelegate {
     }
     
     func audioServiceStopPlaying(_ audioService: AudioPlayingService) {
-        if homeModel.canTransitionToRecording {
-            audioRecordingService.record(duration: homeModel.recordingModel.timeInterval)
-        } else {
-            homeModel.applicationState = .idle
-        }
-        homeModel.buttonState = .play
-    }
-}
-
-// MARK: - AudioRecordingServiceDelegate implementation
-
-extension HomePresenter: AudioRecordingServiceDelegate {
-    
-    func audioServiceStartRecording(_ audioService: AudioRecordingService) {
-        homeModel.applicationState = .recording
-    }
-    
-    func audioServiceFinishRecording(_ audioService: AudioRecordingService) {
         homeModel.applicationState = .idle
+        homeModel.buttonState = .play
     }
 }

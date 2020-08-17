@@ -10,9 +10,21 @@ import UIKit
 
 extension UIView {
     
-    /// Rounding all corners
-    func roundCorners(radius: CGFloat) {
-        layer.cornerRadius = radius
+    enum Radius {
+        
+        /// Be aware, that `.circle` option should be set, when final size of view is set
+        case circle
+        case custom(radius: CGFloat)
+    }
+    
+    /// Rounding all corners.
+    func roundCorners(radius: Radius) {
+        switch radius {
+        case .circle:
+            layer.cornerRadius = frame.height / 2
+        case .custom(let radius):
+            layer.cornerRadius = radius
+        }
         clipsToBounds = true
     }
     

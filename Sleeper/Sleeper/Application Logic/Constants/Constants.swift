@@ -20,6 +20,7 @@ struct Constants {
     
     static let play = "Play"
     static let pause = "Pause"
+    static let cancel = "Cancel"
     
     struct Sounds {
         static let natureFileName = "nature"
