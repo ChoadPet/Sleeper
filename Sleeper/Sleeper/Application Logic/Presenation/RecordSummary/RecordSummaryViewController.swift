@@ -25,6 +25,8 @@ class RecordSummaryViewController: UIViewController {
 
 }
 
+// MARK: - TableView delegate
+
 extension RecordSummaryViewController: UITableViewDelegate {
        
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -71,6 +73,8 @@ extension RecordSummaryViewController: UITableViewDelegate {
         }
     }
 }
+
+// MARK: - TableView dataSource
 
 extension RecordSummaryViewController: UITableViewDataSource {
     

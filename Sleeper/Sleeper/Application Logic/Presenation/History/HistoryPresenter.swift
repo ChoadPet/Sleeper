@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HistoryViewProtocol: class, NavigationInitializable, TableViewInitializable {
-    
+    func deleteRows(at indexPath: IndexPath)
 }
 
 final class HistoryPresenter {
@@ -18,11 +18,7 @@ final class HistoryPresenter {
     private let coordinator: Coordinator
     private let persistentStorage: PersistenceStorage
     
-    private(set) var dataSource: [RecordModel] = [] {
-        didSet {
-            view.updateTableView()
-        }
-    }
+    private(set) var dataSource: [RecordModel] = []
     
     
     init(view: HistoryViewProtocol,
@@ -44,6 +40,12 @@ final class HistoryPresenter {
     func userDidSelect(at indexPath: IndexPath) {
         let record = dataSource[indexPath.row]
         coordinator.recordSummaryViewController(record: record)
+    }
+    
+    func deleteRecord(at indexPath: IndexPath) {
+        let record = dataSource.remove(at: indexPath.row)
+        persistentStorage.removeRecord(record)
+        view.deleteRows(at: indexPath)
     }
     
     func closePressed() {

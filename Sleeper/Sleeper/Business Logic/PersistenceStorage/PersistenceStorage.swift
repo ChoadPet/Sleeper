@@ -38,10 +38,20 @@ final class PersistenceStorage {
     }
     
     @discardableResult
-    func createRecord(_ record: RecordModel) -> RecordEntity {
-        let record = try! RecordEntity.createRecord(recordModel: record, in: viewContext)
+    func createRecord(_ recordModel: RecordModel) -> RecordEntity {
+        let record = RecordEntity.createRecord(recordModel, in: viewContext)
         persistentContainer.saveContext()
         return record
+    }
+    
+    @discardableResult
+    func removeRecord(_ recordModel: RecordModel) -> RecordEntity? {
+        if let record = try! RecordEntity.findRecord(recordModel: recordModel, in: viewContext) {
+            viewContext.delete(record)
+            persistentContainer.saveContext()
+            return record
+        }
+        return nil
     }
     
     func fetchRecords() -> [RecordEntity] {

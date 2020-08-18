@@ -17,28 +17,23 @@ class RecordEntity: NSManagedObject {
                            time: time!.timeModel)
     }
     
-    class func createRecord(recordModel: RecordModel, in context: NSManagedObjectContext) throws -> RecordEntity {
-        let request: NSFetchRequest<RecordEntity> = RecordEntity.fetchRequest()
-        
-        // https://stackoverflow.com/a/52400493/6057764
-        print("Record model uuid: \(recordModel.unique.uuidString)")
-        request.predicate = NSPredicate(format: "%K == %@", #keyPath(RecordEntity.unique), recordModel.unique.uuidString)
-        
-        do {
-            let matches = try context.fetch(request)
-            if let record = matches.first {
-                return record
-            }
-        } catch {
-            throw error
-        }
-        
+    class func createRecord(_ recordModel: RecordModel, in context: NSManagedObjectContext) -> RecordEntity {
         let record = RecordEntity(context: context)
         record.status = recordModel.status.rawValue
         record.unique = recordModel.unique.uuidString
         record.timer = recordModel.timer
-        record.time = try? TimeEntity.createTime(timeModel: recordModel.time, in: context)
+        record.time = TimeEntity.createTime(recordModel.time, in: context)
         return record
+    }
+    
+    class func findRecord(recordModel: RecordModel, in context: NSManagedObjectContext) -> RecordEntity? {
+        let request: NSFetchRequest<RecordEntity> = RecordEntity.fetchRequest()
+        
+        // https://stackoverflow.com/a/52400493/6057764
+        request.predicate = NSPredicate(format: "%K == %@", #keyPath(RecordEntity.unique), recordModel.unique.uuidString)
+        
+        let matches = try? context.fetch(request)
+        return matches?.first
     }
 }
 

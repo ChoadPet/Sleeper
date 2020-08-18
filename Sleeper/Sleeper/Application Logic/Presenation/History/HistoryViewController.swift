@@ -29,6 +29,8 @@ class HistoryViewController: UITableViewController {
     
 }
 
+// MARK: - TableView delegate
+
 extension HistoryViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -38,7 +40,21 @@ extension HistoryViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightForRow
     }
+    
+    // MARK: Swipe to delete part
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deleteRecord(at: indexPath)
+        }
+    }
 }
+
+// MARK: - TableView dataSource
 
 extension HistoryViewController {
     
@@ -75,5 +91,9 @@ extension HistoryViewController: HistoryViewProtocol {
     
     func updateTableView() {
         tableView.reloadData()
+    }
+    
+    func deleteRows(at indexPath: IndexPath) {
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
