@@ -13,7 +13,6 @@ class UserDefaultsService {
     enum Keys: String {
         
         case soundTimer
-        case recording
     }
     
     private let userDefaults: UserDefaults
@@ -37,11 +36,6 @@ extension UserDefaultsService {
     var soundTimer: String? {
         get { value(forKey: .soundTimer) as? String }
         set { save(newValue, forKey: .soundTimer) }
-    }
-    
-    var recording: String? {
-        get { value(forKey: .recording) as? String }
-        set { save(newValue, forKey: .recording) }
     }
     
 }

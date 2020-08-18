@@ -62,9 +62,9 @@ final class RecordSummaryPresenter {
         case .status:
             return record.status.rawValue
         case .created:
-            return "created"
+            return "Created: \(record.time.created.stringDateInterpolation)"
         case .finished:
-            return "finished"
+            return "Finished: \(record.time.finished.stringDateInterpolation)"
         }
     }
     

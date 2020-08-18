@@ -10,7 +10,7 @@ import AVFoundation
 
 protocol AudioPlayingServiceDelegate: class {
     func audioServiceStartPlaying(_ audioService: AudioPlayingService)
-    func audioServiceStopPlaying(_ audioService: AudioPlayingService)
+    func audioServiceStopPlaying(_ audioService: AudioPlayingService, forceCancel: Bool)
     func audioServicePausePlaying(_ audioService: AudioPlayingService)
 }
 
@@ -48,10 +48,10 @@ final class AudioPlayingService {
         }
     }
     
-    func stop() {
+    func stop(forceCancel: Bool = false) {
         player?.stop()
         player?.currentTime = 0
-        delegate?.audioServiceStopPlaying(self)
+        delegate?.audioServiceStopPlaying(self, forceCancel: forceCancel)
         
         invalidateTimer()
     }

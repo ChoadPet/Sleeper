@@ -26,6 +26,8 @@ final class HomePresenter {
     private let audioPlayerService: AudioPlayingService
     private let persistentStorage: PersistenceStorage
     
+    private var startPlay: Date!
+    
     
     init(view: HomeViewProtocol,
          coordinator: Coordinator,
@@ -37,8 +39,7 @@ final class HomePresenter {
         self.userDefaultsService = userDefaultsService
         self.persistentStorage = persistentStorage
         
-        let soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer,
-                                                   preferenceType: .soundTimer)
+        let soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer)
         self.homeModel = HomeModel(soundTimerModel: soundTimerModel)
         
         let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
@@ -72,7 +73,7 @@ final class HomePresenter {
     func secondaryButtonPressed() {
         switch homeModel.applicationState {
         case .playing, .paused:
-            audioPlayerService.stop()
+            audioPlayerService.stop(forceCancel: true)
         default:
             break
         }
@@ -82,8 +83,7 @@ final class HomePresenter {
         let title = homeModel.soundTimerModel.title
         let titles = homeModel.soundTimerModel.optionsTitles
         view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
-            let newModel = TimerPreferenceModel(string: chosenOption,
-                                                preferenceType: .soundTimer)
+            let newModel = TimerPreferenceModel(string: chosenOption)
             guard newModel != self.homeModel.soundTimerModel else { return }
             self.homeModel.soundTimerModel = newModel
         }
@@ -115,6 +115,8 @@ extension HomePresenter: AudioPlayingServiceDelegate {
     func audioServiceStartPlaying(_ audioService: AudioPlayingService) {
         homeModel.applicationState = .playing
         homeModel.buttonState = .pause
+        
+        startPlay = Date()
     }
     
     func audioServicePausePlaying(_ audioService: AudioPlayingService) {
@@ -122,13 +124,13 @@ extension HomePresenter: AudioPlayingServiceDelegate {
         homeModel.buttonState = .play
     }
     
-    func audioServiceStopPlaying(_ audioService: AudioPlayingService) {
+    func audioServiceStopPlaying(_ audioService: AudioPlayingService, forceCancel: Bool) {
         homeModel.applicationState = .idle
         homeModel.buttonState = .play
         
-        let time = TimeModel(created: Date(), finished: Date())
+        let time = TimeModel(created: startPlay, finished: Date())
         let record = RecordModel(unique: UUID(),
-                                 status: .cancelled,
+                                 status: forceCancel ? .cancelled : .finished,
                                  timer: homeModel.soundTimerModel.optionTitle,
                                  time: time)
         persistentStorage.createRecord(record)

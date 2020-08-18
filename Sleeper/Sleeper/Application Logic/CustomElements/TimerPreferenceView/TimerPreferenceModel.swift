@@ -12,14 +12,10 @@ final class TimerPreferenceModel {
     
     let time: Int?
     let timeType: TimeType
-    let preferenceType: PreferenceType
     
-    /// Title used for `soundTimer` and `recordingDuration` view titles
+    /// Title used for `soundTimer`view title
     var title: String {
-        switch preferenceType {
-        case .soundTimer: return Constants.soundTimer
-        case .recording: return Constants.recording
-        }
+        return Constants.soundTimer
     }
     
     /// Name of option, example: `off`, `1 min` etc
@@ -30,7 +26,15 @@ final class TimerPreferenceModel {
     
     /// Titles used in available option for `UIAlertController`
     var optionsTitles: [String] {
-        return preferenceType.preferences.map { $0.optionTitle }
+        return [
+            TimerPreferenceModel(time: nil, timeType: .off),
+            TimerPreferenceModel(time: 10, timeType: .sec),
+            TimerPreferenceModel(time: 1, timeType: .min),
+            TimerPreferenceModel(time: 5, timeType: .min),
+            TimerPreferenceModel(time: 10, timeType: .min),
+            TimerPreferenceModel(time: 15, timeType: .min),
+            TimerPreferenceModel(time: 20, timeType: .min)
+            ].map { $0.optionTitle }
     }
     
     var timeInterval: TimeInterval {
@@ -39,6 +43,8 @@ final class TimerPreferenceModel {
             return .infinity
         case .min:
             return TimeInterval(self.time! * 60)
+        case .sec:
+            return TimeInterval(self.time!)
         case .hours:
             return TimeInterval(self.time! * 60 * 60)
         }
@@ -46,15 +52,14 @@ final class TimerPreferenceModel {
     
     
     /// Time is optional,  when `timeType = off`
-    init(time: Int?, timeType: TimeType, preferenceType: PreferenceType) {
+    init(time: Int?, timeType: TimeType) {
         self.time = time
         self.timeType = timeType
-        self.preferenceType = preferenceType
     }
     
     // :(
     /// This init used when user choose some option from popup and when restore from `userDefaults`
-    init(string: String?, preferenceType: PreferenceType) {
+    init(string: String?) {
         let array = string?.components(separatedBy: .whitespaces)
         if let options = array, options.count > 1 {
             
@@ -67,7 +72,6 @@ final class TimerPreferenceModel {
             self.time = nil
             self.timeType = .off
         }
-        self.preferenceType = preferenceType
     }
     
 }
@@ -78,51 +82,15 @@ extension TimerPreferenceModel {
         
         case off
         case min
+        case sec
         case hours
     }
-    
-}
-
-extension TimerPreferenceModel {
-    
-    enum PreferenceType {
-        
-        case soundTimer
-        case recording
-        
-        var preferences: [TimerPreferenceModel] {
-            switch self {
-            case .soundTimer:
-                return [
-                    TimerPreferenceModel(time: nil, timeType: .off, preferenceType: self),
-                    TimerPreferenceModel(time: 1, timeType: .min, preferenceType: self),
-                    TimerPreferenceModel(time: 5, timeType: .min, preferenceType: self),
-                    TimerPreferenceModel(time: 10, timeType: .min, preferenceType: self),
-                    TimerPreferenceModel(time: 15, timeType: .min, preferenceType: self),
-                    TimerPreferenceModel(time: 20, timeType: .min, preferenceType: self)
-                ]
-            case .recording:
-                return [
-                    TimerPreferenceModel(time: nil, timeType: .off, preferenceType: self),
-                    TimerPreferenceModel(time: 5, timeType: .min, preferenceType: self),
-                    TimerPreferenceModel(time: 1, timeType: .hours, preferenceType: self),
-                    TimerPreferenceModel(time: 2, timeType: .hours, preferenceType: self),
-                    TimerPreferenceModel(time: 3, timeType: .hours, preferenceType: self),
-                    TimerPreferenceModel(time: 4, timeType: .hours, preferenceType: self),
-                    TimerPreferenceModel(time: 5, timeType: .hours, preferenceType: self)
-                ]
-            }
-        }
-        
-    }
-    
 }
 
 extension TimerPreferenceModel: Equatable {
     
     static func == (lhs: TimerPreferenceModel, rhs: TimerPreferenceModel) -> Bool {
         return lhs.time == rhs.time &&
-            lhs.timeType == rhs.timeType &&
-            lhs.preferenceType == rhs.preferenceType
+            lhs.timeType == rhs.timeType
     }
 }
