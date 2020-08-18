@@ -12,6 +12,9 @@ final class Configurator {
     
     private let coordinator: Coordinator
     
+    private let persistentStorage = PersistenceStorage()
+    private let userDefaultsService = UserDefaultsService()
+    
     
     init(coordinator: Coordinator) {
         self.coordinator = coordinator
@@ -21,16 +24,17 @@ final class Configurator {
         switch screen {
         case .home:
             let viewController = HomeViewController.initViewControllerFromNib()
-            let userDefaultsService = UserDefaultsService()
             let presenter = HomePresenter(view: viewController,
                                           coordinator: coordinator,
-                                          userDefaultsService: userDefaultsService)
+                                          userDefaultsService: userDefaultsService,
+                                          persistentStorage: persistentStorage)
             viewController.presenter = presenter
             return viewController
         case .history:
             let viewController = HistoryViewController.initViewControllerFromNib()
             let presenter = HistoryPresenter(view: viewController,
-                                             coordinator: coordinator)
+                                             coordinator: coordinator,
+                                             persistentStorage: persistentStorage)
             viewController.presenter = presenter
             return viewController
         }

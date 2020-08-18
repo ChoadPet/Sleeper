@@ -8,16 +8,17 @@
 
 import Foundation
 
-private enum Keys: String {
-    
-    case soundTimer
-    case recording
-}
-
 class UserDefaultsService {
     
+    enum Keys: String {
+        
+        case soundTimer
+        case recording
+    }
+    
     private let userDefaults: UserDefaults
-
+    
+    
     init() {
         self.userDefaults = UserDefaults.standard
     }

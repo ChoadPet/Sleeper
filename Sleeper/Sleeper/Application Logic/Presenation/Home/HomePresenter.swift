@@ -24,20 +24,22 @@ final class HomePresenter {
     private let homeModel: HomeModel
     private let userDefaultsService: UserDefaultsService
     private let audioPlayerService: AudioPlayingService
+    private let persistentStorage: PersistenceStorage
     
     
     init(view: HomeViewProtocol,
          coordinator: Coordinator,
-         userDefaultsService: UserDefaultsService) {
+         userDefaultsService: UserDefaultsService,
+         persistentStorage: PersistenceStorage) {
         
         self.view = view
         self.coordinator = coordinator
+        self.userDefaultsService = userDefaultsService
+        self.persistentStorage = persistentStorage
         
         let soundTimerModel = TimerPreferenceModel(string: userDefaultsService.soundTimer,
                                                    preferenceType: .soundTimer)
         self.homeModel = HomeModel(soundTimerModel: soundTimerModel)
-        
-        self.userDefaultsService = userDefaultsService
         
         let fileURL = Bundle.main.url(forResource: Constants.Sounds.natureFileName,
                                       withExtension: "m4a")!
@@ -123,5 +125,12 @@ extension HomePresenter: AudioPlayingServiceDelegate {
     func audioServiceStopPlaying(_ audioService: AudioPlayingService) {
         homeModel.applicationState = .idle
         homeModel.buttonState = .play
+        
+        let time = TimeModel(created: Date(), finished: Date())
+        let record = RecordModel(unique: UUID(),
+                                 status: .cancelled,
+                                 timer: homeModel.soundTimerModel.optionTitle,
+                                 time: time)
+        persistentStorage.createRecord(record)
     }
 }

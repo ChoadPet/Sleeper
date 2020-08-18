@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE28D77A24EC12AC008017CB /* RecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D77924EC12AC008017CB /* RecordEntity.swift */; };
+		CE28D77C24EC12C4008017CB /* TimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D77B24EC12C4008017CB /* TimeEntity.swift */; };
+		CE28D77F24EC1D9B008017CB /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D77E24EC1D9B008017CB /* RecordModel.swift */; };
+		CE28D78124EC1DC5008017CB /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D78024EC1DC5008017CB /* TimeModel.swift */; };
+		CE28D78524EC2227008017CB /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D78324EC2227008017CB /* RecordTableViewCell.swift */; };
+		CE28D78624EC2227008017CB /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE28D78424EC2227008017CB /* RecordTableViewCell.xib */; };
+		CE28D78824EC2397008017CB /* TableViewInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D78724EC2397008017CB /* TableViewInitializable.swift */; };
 		CE31EA0224EAA8CD006BF246 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31EA0124EAA8CD006BF246 /* Configurator.swift */; };
 		CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE399F0324CADF9E004BB45B /* HomeModel.swift */; };
 		CE4E5FE824EAAAE8004A1422 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FE724EAAAE8004A1422 /* UIApplicationExtension.swift */; };
@@ -28,7 +35,6 @@
 		CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */; };
 		CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4424C76D0800351AF2 /* RSAlertController.swift */; };
 		CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4624C7750F00351AF2 /* TimerPreferenceModel.swift */; };
-		CEA346B024CC6C92005ECBAD /* AudioRecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA346AF24CC6C92005ECBAD /* AudioRecordingService.swift */; };
 		CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7313324C5F64200B39CF3 /* AppDelegate.swift */; };
 		CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313C24C5F64500B39CF3 /* Assets.xcassets */; };
 		CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */; };
@@ -40,9 +46,19 @@
 		CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */; };
 		CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */; };
 		CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBDA3224C621F100693DAA /* RSBaseView.swift */; };
+		CEF468B024EBF81B00BA6C68 /* Sleeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEF468AE24EBF81B00BA6C68 /* Sleeper.xcdatamodeld */; };
+		CEF468B224EBF98100BA6C68 /* PersistenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF468B124EBF98100BA6C68 /* PersistenceStorage.swift */; };
+		CEF468B524EBFBD600BA6C68 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF468B424EBFBD600BA6C68 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE28D77924EC12AC008017CB /* RecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntity.swift; sourceTree = "<group>"; };
+		CE28D77B24EC12C4008017CB /* TimeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntity.swift; sourceTree = "<group>"; };
+		CE28D77E24EC1D9B008017CB /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		CE28D78024EC1DC5008017CB /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		CE28D78324EC2227008017CB /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		CE28D78424EC2227008017CB /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
+		CE28D78724EC2397008017CB /* TableViewInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInitializable.swift; sourceTree = "<group>"; };
 		CE31EA0124EAA8CD006BF246 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		CE399F0324CADF9E004BB45B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		CE4E5FE724EAAAE8004A1422 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
@@ -64,7 +80,6 @@
 		CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		CEA01C4424C76D0800351AF2 /* RSAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAlertController.swift; sourceTree = "<group>"; };
 		CEA01C4624C7750F00351AF2 /* TimerPreferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceModel.swift; sourceTree = "<group>"; };
-		CEA346AF24CC6C92005ECBAD /* AudioRecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingService.swift; sourceTree = "<group>"; };
 		CEC7313024C5F64200B39CF3 /* Sleeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7313324C5F64200B39CF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7313C24C5F64500B39CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +93,9 @@
 		CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSNavigationController.swift; sourceTree = "<group>"; };
 		CEDBDA3224C621F100693DAA /* RSBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBaseView.swift; sourceTree = "<group>"; };
+		CEF468AF24EBF81B00BA6C68 /* Sleeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sleeper.xcdatamodel; sourceTree = "<group>"; };
+		CEF468B124EBF98100BA6C68 /* PersistenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStorage.swift; sourceTree = "<group>"; };
+		CEF468B424EBFBD600BA6C68 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +109,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE28D77824EC128D008017CB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE28D77924EC12AC008017CB /* RecordEntity.swift */,
+				CE28D77B24EC12C4008017CB /* TimeEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE28D77D24EC1D92008017CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE28D77E24EC1D9B008017CB /* RecordModel.swift */,
+				CE28D78024EC1DC5008017CB /* TimeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE28D78224EC220A008017CB /* RecordCell&Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CE28D78324EC2227008017CB /* RecordTableViewCell.swift */,
+				CE28D78424EC2227008017CB /* RecordTableViewCell.xib */,
+			);
+			path = "RecordCell&Xib";
+			sourceTree = "<group>";
+		};
 		CE4E5FEB24EABCFB004A1422 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				CE4E5FEC24EABD0C004A1422 /* NavigationInitializable.swift */,
+				CE28D78724EC2397008017CB /* TableViewInitializable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -145,9 +191,10 @@
 		CE9B76B924C60A8A006EDE16 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CE28D77D24EC1D92008017CB /* Models */,
+				CEF468B324EBFBC700BA6C68 /* PersistenceStorage */,
 				CE4E5FEB24EABCFB004A1422 /* Protocols */,
 				CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */,
-				CEA346AF24CC6C92005ECBAD /* AudioRecordingService.swift */,
 				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
 			);
 			path = "Business Logic";
@@ -187,6 +234,7 @@
 		CEC7312724C5F64200B39CF3 = {
 			isa = PBXGroup;
 			children = (
+				CEF468AE24EBF81B00BA6C68 /* Sleeper.xcdatamodeld */,
 				CEC7313224C5F64200B39CF3 /* Sleeper */,
 				CEC7313124C5F64200B39CF3 /* Products */,
 			);
@@ -244,12 +292,23 @@
 		CEDBDA2D24C61CFD00693DAA /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
+				CE28D78224EC220A008017CB /* RecordCell&Xib */,
 				CE690E4224C6225D007DF3C2 /* TimerPreferenceView */,
 				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
 				CEDBDA3224C621F100693DAA /* RSBaseView.swift */,
 				CEA01C4424C76D0800351AF2 /* RSAlertController.swift */,
 			);
 			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		CEF468B324EBFBC700BA6C68 /* PersistenceStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CE28D77824EC128D008017CB /* Entities */,
+				CEF468B124EBF98100BA6C68 /* PersistenceStorage.swift */,
+				CEF468B424EBFBD600BA6C68 /* PersistentContainer.swift */,
+			);
+			path = PersistenceStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +372,7 @@
 				CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */,
 				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
+				CE28D78624EC2227008017CB /* RecordTableViewCell.xib in Resources */,
 				CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */,
 				CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */,
 				CE4E5FF224EAD94D004A1422 /* HistoryViewController.xib in Resources */,
@@ -331,25 +391,33 @@
 				CE4E5FE824EAAAE8004A1422 /* UIApplicationExtension.swift in Sources */,
 				CE9B76B724C609A1006EDE16 /* Coordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
+				CE28D77A24EC12AC008017CB /* RecordEntity.swift in Sources */,
 				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
 				CE670BBD24C792BE00F749EB /* AudioPlayingService.swift in Sources */,
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
+				CEF468B024EBF81B00BA6C68 /* Sleeper.xcdatamodeld in Sources */,
+				CE28D78124EC1DC5008017CB /* TimeModel.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
 				CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */,
 				CE4E5FF424EAD989004A1422 /* HistoryPresenter.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
 				CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */,
-				CEA346B024CC6C92005ECBAD /* AudioRecordingService.swift in Sources */,
 				CE31EA0224EAA8CD006BF246 /* Configurator.swift in Sources */,
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CE4E5FED24EABD0C004A1422 /* NavigationInitializable.swift in Sources */,
+				CEF468B224EBF98100BA6C68 /* PersistenceStorage.swift in Sources */,
+				CE28D78524EC2227008017CB /* RecordTableViewCell.swift in Sources */,
+				CE28D77C24EC12C4008017CB /* TimeEntity.swift in Sources */,
 				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
+				CE28D78824EC2397008017CB /* TableViewInitializable.swift in Sources */,
 				CE4E5FF124EAD94D004A1422 /* HistoryViewController.swift in Sources */,
+				CEF468B524EBFBD600BA6C68 /* PersistentContainer.swift in Sources */,
 				CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
 				CE4E5FEA24EAAB79004A1422 /* UIViewControllerExtension.swift in Sources */,
+				CE28D77F24EC1D9B008017CB /* RecordModel.swift in Sources */,
 				CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */,
 				CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */,
 				CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */,
@@ -544,6 +612,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEF468AE24EBF81B00BA6C68 /* Sleeper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEF468AF24EBF81B00BA6C68 /* Sleeper.xcdatamodel */,
+			);
+			currentVersion = CEF468AF24EBF81B00BA6C68 /* Sleeper.xcdatamodel */;
+			path = Sleeper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEC7312824C5F64200B39CF3 /* Project object */;
 }
