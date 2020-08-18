@@ -72,10 +72,8 @@ extension HistoryViewController: HistoryViewProtocol {
     func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        
-        let nib = UINib(nibName: identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: identifier)
         tableView.tableFooterView = UIView()
+        tableView.registerNib(with: RecordTableViewCell.className)
     }
     
     func updateTableView() {

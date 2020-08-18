@@ -12,8 +12,8 @@ class RecordTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.font = UIFont.systemFont(ofSize: 21, weight: .medium)
             titleLabel.textColor = UIColor.accent
+            titleLabel.font = UIFont.systemFont(ofSize: 21, weight: .medium)
         }
     }
     @IBOutlet weak var statusLabel: UILabel! {

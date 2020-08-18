@@ -36,4 +36,9 @@ final class Coordinator {
         let viewController = configurator.configure(.history)
         router.present(viewController, animated: true)
     }
+    
+    func recordSummaryViewController(record: RecordModel) {
+        let viewController = configurator.configure(.recordSummary(record: record))
+        router.push(viewController, animated: true)
+    }
 }

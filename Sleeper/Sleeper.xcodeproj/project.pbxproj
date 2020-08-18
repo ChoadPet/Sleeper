@@ -16,6 +16,14 @@
 		CE28D78824EC2397008017CB /* TableViewInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28D78724EC2397008017CB /* TableViewInitializable.swift */; };
 		CE31EA0224EAA8CD006BF246 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31EA0124EAA8CD006BF246 /* Configurator.swift */; };
 		CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE399F0324CADF9E004BB45B /* HomeModel.swift */; };
+		CE4C14F624EC276A00E0255B /* RecordSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C14F424EC276A00E0255B /* RecordSummaryViewController.swift */; };
+		CE4C14F724EC276A00E0255B /* RecordSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C14F524EC276A00E0255B /* RecordSummaryViewController.xib */; };
+		CE4C14F924EC277800E0255B /* RecordSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C14F824EC277800E0255B /* RecordSummaryPresenter.swift */; };
+		CE4C14FE24EC2F4500E0255B /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C14FC24EC2F4500E0255B /* TitleTableViewCell.swift */; };
+		CE4C14FF24EC2F4500E0255B /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C14FD24EC2F4500E0255B /* TitleTableViewCell.xib */; };
+		CE4C150124EC302900E0255B /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C150024EC302900E0255B /* UITableViewExtension.swift */; };
+		CE4C150324EC34F200E0255B /* RecordSummarySections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C150224EC34F200E0255B /* RecordSummarySections.swift */; };
+		CE4C150624EC3A2E00E0255B /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C150524EC3A2E00E0255B /* CustomHeaderView.swift */; };
 		CE4E5FE824EAAAE8004A1422 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FE724EAAAE8004A1422 /* UIApplicationExtension.swift */; };
 		CE4E5FEA24EAAB79004A1422 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FE924EAAB79004A1422 /* UIViewControllerExtension.swift */; };
 		CE4E5FED24EABD0C004A1422 /* NavigationInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FEC24EABD0C004A1422 /* NavigationInitializable.swift */; };
@@ -61,6 +69,14 @@
 		CE28D78724EC2397008017CB /* TableViewInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInitializable.swift; sourceTree = "<group>"; };
 		CE31EA0124EAA8CD006BF246 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		CE399F0324CADF9E004BB45B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		CE4C14F424EC276A00E0255B /* RecordSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSummaryViewController.swift; sourceTree = "<group>"; };
+		CE4C14F524EC276A00E0255B /* RecordSummaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordSummaryViewController.xib; sourceTree = "<group>"; };
+		CE4C14F824EC277800E0255B /* RecordSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSummaryPresenter.swift; sourceTree = "<group>"; };
+		CE4C14FC24EC2F4500E0255B /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		CE4C14FD24EC2F4500E0255B /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
+		CE4C150024EC302900E0255B /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		CE4C150224EC34F200E0255B /* RecordSummarySections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSummarySections.swift; sourceTree = "<group>"; };
+		CE4C150524EC3A2E00E0255B /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		CE4E5FE724EAAAE8004A1422 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		CE4E5FE924EAAB79004A1422 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE4E5FEC24EABD0C004A1422 /* NavigationInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInitializable.swift; sourceTree = "<group>"; };
@@ -134,6 +150,34 @@
 				CE28D78424EC2227008017CB /* RecordTableViewCell.xib */,
 			);
 			path = "RecordCell&Xib";
+			sourceTree = "<group>";
+		};
+		CE4C14F324EC274F00E0255B /* RecordSummary */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C150224EC34F200E0255B /* RecordSummarySections.swift */,
+				CE4C14F824EC277800E0255B /* RecordSummaryPresenter.swift */,
+				CE4C14F424EC276A00E0255B /* RecordSummaryViewController.swift */,
+				CE4C14F524EC276A00E0255B /* RecordSummaryViewController.xib */,
+			);
+			path = RecordSummary;
+			sourceTree = "<group>";
+		};
+		CE4C14FB24EC2F2E00E0255B /* TitleCell&Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C14FC24EC2F4500E0255B /* TitleTableViewCell.swift */,
+				CE4C14FD24EC2F4500E0255B /* TitleTableViewCell.xib */,
+			);
+			path = "TitleCell&Xib";
+			sourceTree = "<group>";
+		};
+		CE4C150424EC3A1600E0255B /* CustomHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C150524EC3A2E00E0255B /* CustomHeaderView.swift */,
+			);
+			path = CustomHeaderView;
 			sourceTree = "<group>";
 		};
 		CE4E5FEB24EABCFB004A1422 /* Protocols */ = {
@@ -214,6 +258,7 @@
 		CE9B76BB24C60ABB006EDE16 /* Presenation */ = {
 			isa = PBXGroup;
 			children = (
+				CE4C14F324EC274F00E0255B /* RecordSummary */,
 				CE4E5FEE24EAD93A004A1422 /* History */,
 				CE9B76BC24C60AC0006EDE16 /* Home */,
 			);
@@ -277,6 +322,7 @@
 				CEDBDA2B24C61C9100693DAA /* UIColorExtension.swift */,
 				CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */,
 				CE4E5FE924EAAB79004A1422 /* UIViewControllerExtension.swift */,
+				CE4C150024EC302900E0255B /* UITableViewExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -292,6 +338,8 @@
 		CEDBDA2D24C61CFD00693DAA /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
+				CE4C150424EC3A1600E0255B /* CustomHeaderView */,
+				CE4C14FB24EC2F2E00E0255B /* TitleCell&Xib */,
 				CE28D78224EC220A008017CB /* RecordCell&Xib */,
 				CE690E4224C6225D007DF3C2 /* TimerPreferenceView */,
 				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
@@ -373,7 +421,9 @@
 				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
 				CE28D78624EC2227008017CB /* RecordTableViewCell.xib in Resources */,
+				CE4C14F724EC276A00E0255B /* RecordSummaryViewController.xib in Resources */,
 				CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */,
+				CE4C14FF24EC2F4500E0255B /* TitleTableViewCell.xib in Resources */,
 				CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */,
 				CE4E5FF224EAD94D004A1422 /* HistoryViewController.xib in Resources */,
 			);
@@ -392,6 +442,7 @@
 				CE9B76B724C609A1006EDE16 /* Coordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,
 				CE28D77A24EC12AC008017CB /* RecordEntity.swift in Sources */,
+				CE4C150124EC302900E0255B /* UITableViewExtension.swift in Sources */,
 				CEDBDA2F24C61D2E00693DAA /* RSNavigationController.swift in Sources */,
 				CE670BBD24C792BE00F749EB /* AudioPlayingService.swift in Sources */,
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
@@ -406,18 +457,23 @@
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CE4E5FED24EABD0C004A1422 /* NavigationInitializable.swift in Sources */,
 				CEF468B224EBF98100BA6C68 /* PersistenceStorage.swift in Sources */,
+				CE4C14F924EC277800E0255B /* RecordSummaryPresenter.swift in Sources */,
 				CE28D78524EC2227008017CB /* RecordTableViewCell.swift in Sources */,
 				CE28D77C24EC12C4008017CB /* TimeEntity.swift in Sources */,
+				CE4C150624EC3A2E00E0255B /* CustomHeaderView.swift in Sources */,
 				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
 				CE28D78824EC2397008017CB /* TableViewInitializable.swift in Sources */,
 				CE4E5FF124EAD94D004A1422 /* HistoryViewController.swift in Sources */,
+				CE4C150324EC34F200E0255B /* RecordSummarySections.swift in Sources */,
 				CEF468B524EBFBD600BA6C68 /* PersistentContainer.swift in Sources */,
 				CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
+				CE4C14F624EC276A00E0255B /* RecordSummaryViewController.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
 				CE9B76BF24C60AEA006EDE16 /* HomeViewController.swift in Sources */,
 				CE4E5FEA24EAAB79004A1422 /* UIViewControllerExtension.swift in Sources */,
 				CE28D77F24EC1D9B008017CB /* RecordModel.swift in Sources */,
+				CE4C14FE24EC2F4500E0255B /* TitleTableViewCell.swift in Sources */,
 				CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */,
 				CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */,
 				CEDBDA2124C6122600693DAA /* NSObjectExtension.swift in Sources */,

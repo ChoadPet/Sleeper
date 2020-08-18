@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HistoryViewProtocol: class, NavigationInitializable, TableViewInitializable {
-    func updateTableView()
+    
 }
 
 final class HistoryPresenter {
@@ -41,11 +41,13 @@ final class HistoryPresenter {
         dataSource = persistentStorage.fetchRecords().map { $0.recordModel }
     }
     
+    func userDidSelect(at indexPath: IndexPath) {
+        let record = dataSource[indexPath.row]
+        coordinator.recordSummaryViewController(record: record)
+    }
+    
     func closePressed() {
         coordinator.router.dismissViewController(animated: true)
     }
     
-    func userDidSelect(at indexPath: IndexPath) {
-        
-    }
 }

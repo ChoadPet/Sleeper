@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TableViewInitializable {
-    func initTableView()    
+    func initTableView()
+    func updateTableView()
 }

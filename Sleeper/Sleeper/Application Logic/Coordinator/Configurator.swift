@@ -37,6 +37,13 @@ final class Configurator {
                                              persistentStorage: persistentStorage)
             viewController.presenter = presenter
             return viewController
+        case .recordSummary(let record):
+            let viewController = RecordSummaryViewController.initViewControllerFromNib()
+            let presenter = RecordSummaryPresenter(view: viewController,
+                                                   coordinator: coordinator,
+                                                   record: record)
+            viewController.presenter = presenter
+            return viewController
         }
     }
     
@@ -47,5 +54,6 @@ extension Configurator {
     enum Screen {
         case home
         case history
+        case recordSummary(record: RecordModel)
     }
 }

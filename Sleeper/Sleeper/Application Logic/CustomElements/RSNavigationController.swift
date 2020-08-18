@@ -13,7 +13,7 @@ class RSNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationBarBorderLineImage(UIImage())
+        navigationBarBorderLineImage(nil)
     }
 
     /// set to `nil` to restore
