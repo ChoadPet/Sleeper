@@ -16,16 +16,18 @@ private enum Keys: String {
 
 class UserDefaultsService {
     
-    static let shared = UserDefaultsService()
-    
-    private init() { }
+    private let userDefaults: UserDefaults
+
+    init() {
+        self.userDefaults = UserDefaults.standard
+    }
     
     private func save<T>(_ value: T, forKey key: Keys) {
-        UserDefaults.standard.set(value, forKey: key.rawValue)
+        userDefaults.set(value, forKey: key.rawValue)
     }
     
     private func value(forKey key: Keys) -> Any? {
-        return UserDefaults.standard.value(forKey: key.rawValue)
+        return userDefaults.value(forKey: key.rawValue)
     }
 }
 

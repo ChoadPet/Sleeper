@@ -21,7 +21,7 @@ final class Configurator {
         switch screen {
         case .home:
             let viewController = HomeViewController.initViewControllerFromNib()
-            let userDefaultsService = UserDefaultsService.shared
+            let userDefaultsService = UserDefaultsService()
             let presenter = HomePresenter(view: viewController,
                                           coordinator: coordinator,
                                           userDefaultsService: userDefaultsService)
