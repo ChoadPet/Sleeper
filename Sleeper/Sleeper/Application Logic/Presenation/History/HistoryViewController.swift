@@ -40,18 +40,6 @@ extension HistoryViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightForRow
     }
-    
-    // MARK: Swipe to delete part
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            presenter.deleteRecord(at: indexPath)
-        }
-    }
 }
 
 // MARK: - TableView dataSource
@@ -73,13 +61,11 @@ extension HistoryViewController {
 extension HistoryViewController: HistoryViewProtocol {
     
     func initNavigation() {
-        let image = UIImage(systemName: "xmark")
-        let barItem = UIBarButtonItem(image: image,
-                                      style: .plain,
-                                      target: self,
-                                      action: #selector(closeAction))
-        navigationItem.rightBarButtonItem = barItem
         navigationItem.title = "History"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(closeAction))
     }
     
     func initTableView() {
@@ -91,9 +77,5 @@ extension HistoryViewController: HistoryViewProtocol {
     
     func updateTableView() {
         tableView.reloadData()
-    }
-    
-    func deleteRows(at indexPath: IndexPath) {
-        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }

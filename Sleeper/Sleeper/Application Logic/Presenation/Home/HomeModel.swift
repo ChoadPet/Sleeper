@@ -48,13 +48,12 @@ extension HomeModel {
         
         var title: String {
             switch self {
-            case .play:
-                return Constants.play
-            case .pause:
-                return Constants.pause
+            case .play: return Constants.play
+            case .pause: return Constants.pause
             }
         }
     }
+    
 }
 
 extension HomeModel {
@@ -71,6 +70,6 @@ extension HomeModel {
             case .paused: return Constants.paused
             }
         }
-        
     }
+    
 }

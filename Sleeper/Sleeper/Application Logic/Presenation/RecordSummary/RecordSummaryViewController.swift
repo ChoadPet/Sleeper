@@ -54,24 +54,6 @@ extension RecordSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return presenter.allSection[section].footerHeight
     }
-    
-    // MARK: Copying part
-    
-    func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return action == #selector(copy(_:))
-    }
-    
-    func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-        if action == #selector(copy(_:)) {
-            if let cell = tableView.cellForRow(at: indexPath) as? TitleTableViewCell {
-                UIPasteboard.general.string = cell.titleLabel.text
-            }
-        }
-    }
 }
 
 // MARK: - TableView dataSource

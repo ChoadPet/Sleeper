@@ -82,12 +82,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewProtocol {
     
     func initNavigation() {
-        let image = UIImage(systemName: "folder.badge.person.crop")
-        let barItem = UIBarButtonItem(image: image,
-                                      style: .plain,
-                                      target: self,
-                                      action: #selector(historyAction))
-        navigationItem.leftBarButtonItem = barItem
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "folder.badge.person.crop"),
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(historyAction))
     }
     
     func configureSoundTimerView(_ model: TimerPreferenceModel) {
