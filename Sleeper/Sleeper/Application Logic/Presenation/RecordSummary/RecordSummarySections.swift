@@ -33,26 +33,26 @@ extension RecordSummaryPresenter {
         var headerTitle: String {
             switch self {
             case .identifier:
-                return "UUID"
+                return Constants.identifier
             case .timer:
-                return "TIMER"
+                return Constants.timer
             case .status:
-                return "STATUS"
+                return Constants.status
             case .time:
-                return "TIME INFO"
+                return Constants.timerInfo
             }
         }
         
         var footerTitle: String {
             switch self {
             case .identifier:
-                return "Unique identifier for this each record."
+                return Constants.uniqueIdentifierTitle
             case .timer:
-                return "Sound timer option, which was used for this record."
+                return Constants.soundTimerOptionTitle
             case .status:
-                return "Cancelled: when user press cancel playing.\nFinished: when sound was finished by Sound Timer option."
+                return Constants.statusTitle
             case .time:
-                return "Created: when sound was started.\nFinished: when sound was stopped."
+                return Constants.timeTitle
             }
         }
         
