@@ -37,6 +37,7 @@ final class HomeModel {
         self.buttonState = buttonState
         self.soundTimerModel = soundTimerModel
     }
+
 }
 
 extension HomeModel {
@@ -52,10 +53,6 @@ extension HomeModel {
             case .pause:
                 return Constants.pause
             }
-        }
-        
-        mutating func toggle() {
-            self = self == .play ? .pause : .play
         }
     }
 }

@@ -46,10 +46,10 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         presenter.viewDidLoad()
     }
     
@@ -61,13 +61,13 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Actions
-
+    
     @IBAction func primaryButtonAction(_ sender: UIButton) {
         presenter.primaryButtonPressed()
     }
     
     @IBAction func secondaryButtonAction(_ sender: UIButton) {
-        
+        presenter.secondaryButtonPressed()
     }
     
     @objc private func soundTimerAction(_ sender: UITapGestureRecognizer) {
@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func historyAction(_ sender: UIBarButtonItem) {
-            
+        presenter.historyPressed()
     }
 }
 
@@ -83,8 +83,11 @@ extension HomeViewController: HomeViewProtocol {
     
     func initNavigation() {
         let image = UIImage(systemName: "folder.badge.person.crop")
-        let barItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(historyAction))
-        navigationItem.rightBarButtonItem = barItem
+        let barItem = UIBarButtonItem(image: image,
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(historyAction))
+        navigationItem.leftBarButtonItem = barItem
     }
     
     func configureSoundTimerView(_ model: TimerPreferenceModel) {

@@ -27,6 +27,12 @@ final class Configurator {
                                           userDefaultsService: userDefaultsService)
             viewController.presenter = presenter
             return viewController
+        case .history:
+            let viewController = HistoryViewController.initViewControllerFromNib()
+            let presenter = HistoryPresenter(view: viewController,
+                                             coordinator: coordinator)
+            viewController.presenter = presenter
+            return viewController
         }
     }
     
@@ -36,5 +42,6 @@ extension Configurator {
     
     enum Screen {
         case home
+        case history
     }
 }

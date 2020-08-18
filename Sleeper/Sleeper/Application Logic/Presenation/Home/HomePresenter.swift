@@ -54,12 +54,25 @@ final class HomePresenter {
         view.configureSoundTimerView(homeModel.soundTimerModel)
     }
     
+    func historyPressed() {
+        coordinator.historyViewController()
+    }
+    
     func primaryButtonPressed() {
         switch homeModel.buttonState {
         case .play:
             audioPlayerService.play(for: homeModel.soundTimerModel.timeInterval)
         case .pause:
             audioPlayerService.pause()
+        }
+    }
+    
+    func secondaryButtonPressed() {
+        switch homeModel.applicationState {
+        case .playing, .paused:
+            audioPlayerService.stop()
+        default:
+            break
         }
     }
     

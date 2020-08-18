@@ -24,10 +24,16 @@ final class Coordinator {
         self.configurator = Configurator(coordinator: self)
     }
     
-    // MARK: Initial home controller
+    // MARK: - Initial viewControllers
     
     func homeViewController() -> UIViewController {
         return configurator.configure(.home)
     }
     
+    // MARK: - Showing viewControllers
+    
+    func historyViewController() {
+        let viewController = configurator.configure(.history)
+        router.present(viewController, animated: true)
+    }
 }

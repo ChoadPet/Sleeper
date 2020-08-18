@@ -27,23 +27,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-r6-9aB">
-                    <rect key="frame" x="16" y="674" width="382" height="44"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhg-wP-Kxi" userLabel="SoundTimerView" customClass="TimerPreferenceView" customModule="Sleeper" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="Itk-N1-l1W"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-nf-V5L" userLabel="PrimaryButtonContainer">
-                    <rect key="frame" x="0.0" y="750" width="414" height="80"/>
+                    <rect key="frame" x="16" y="732" width="382" height="80"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BI6-zd-26t">
-                            <rect key="frame" x="318" y="0.0" width="80" height="80"/>
+                            <rect key="frame" x="302" y="0.0" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="Bax-Uk-qOY"/>
                                 <constraint firstAttribute="height" constant="80" id="bbP-FH-Imt"/>
@@ -54,7 +42,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-0K-ltA">
-                            <rect key="frame" x="16" y="0.0" width="80" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="LUA-wG-Lec"/>
                                 <constraint firstAttribute="width" constant="80" id="sd4-Eq-2Cp"/>
@@ -70,27 +58,68 @@
                         <constraint firstItem="BI6-zd-26t" firstAttribute="centerY" secondItem="Jv7-nf-V5L" secondAttribute="centerY" id="7E3-1y-Zxu"/>
                         <constraint firstAttribute="bottom" secondItem="BI6-zd-26t" secondAttribute="bottom" id="9q2-SI-eEi"/>
                         <constraint firstItem="S8h-0K-ltA" firstAttribute="centerY" secondItem="Jv7-nf-V5L" secondAttribute="centerY" id="DT2-op-Rjn"/>
-                        <constraint firstItem="S8h-0K-ltA" firstAttribute="leading" secondItem="Jv7-nf-V5L" secondAttribute="leading" constant="16" id="H33-5O-n0T"/>
+                        <constraint firstItem="S8h-0K-ltA" firstAttribute="leading" secondItem="Jv7-nf-V5L" secondAttribute="leading" id="H33-5O-n0T"/>
                         <constraint firstItem="BI6-zd-26t" firstAttribute="top" secondItem="Jv7-nf-V5L" secondAttribute="top" id="L8H-ut-m3Y"/>
                         <constraint firstItem="S8h-0K-ltA" firstAttribute="top" secondItem="Jv7-nf-V5L" secondAttribute="top" id="UTL-9I-2d1"/>
-                        <constraint firstAttribute="trailing" secondItem="BI6-zd-26t" secondAttribute="trailing" constant="16" id="Xlz-rp-Aoh"/>
+                        <constraint firstAttribute="trailing" secondItem="BI6-zd-26t" secondAttribute="trailing" id="Xlz-rp-Aoh"/>
                         <constraint firstAttribute="bottom" secondItem="S8h-0K-ltA" secondAttribute="bottom" id="ae2-G6-UWc"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhg-wP-Kxi" userLabel="SoundTimerView" customClass="TimerPreferenceView" customModule="Sleeper" customModuleProvider="target">
+                    <rect key="frame" x="16" y="656" width="382" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Itk-N1-l1W"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jv7-nf-V5L" secondAttribute="bottom" constant="32" id="48i-ZN-jRR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jv7-nf-V5L" secondAttribute="bottom" constant="50" id="48i-ZN-jRR"/>
                 <constraint firstItem="IM8-Gf-OhN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="EjW-uQ-B04"/>
-                <constraint firstItem="MrO-r6-9aB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OCT-C6-YeN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zhg-wP-Kxi" secondAttribute="trailing" constant="16" id="K3b-On-noX"/>
+                <constraint firstItem="zhg-wP-Kxi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="16" id="SWe-WJ-Sug"/>
+                <constraint firstItem="Jv7-nf-V5L" firstAttribute="top" secondItem="zhg-wP-Kxi" secondAttribute="bottom" constant="32" id="Zd3-BA-9Ev"/>
                 <constraint firstItem="IM8-Gf-OhN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ZlE-tx-0SC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MrO-r6-9aB" secondAttribute="trailing" constant="16" id="hGs-dk-Xzd"/>
+                <constraint firstItem="Jv7-nf-V5L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="16" id="cDK-qC-yyM">
+                    <variation key="heightClass=compact" constant="16"/>
+                </constraint>
+                <constraint firstItem="IM8-Gf-OhN" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="dPU-pG-9QE"/>
+                <constraint firstItem="zhg-wP-Kxi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="haF-ko-kfJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="centerX" secondItem="IM8-Gf-OhN" secondAttribute="trailing" constant="16" id="lGh-Fd-J7b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IM8-Gf-OhN" secondAttribute="trailing" constant="16" id="unh-hk-w0B"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jv7-nf-V5L" secondAttribute="trailing" id="uqa-Ax-4eF"/>
-                <constraint firstItem="Jv7-nf-V5L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vpB-Rx-Dgz"/>
-                <constraint firstItem="Jv7-nf-V5L" firstAttribute="top" secondItem="MrO-r6-9aB" secondAttribute="bottom" constant="32" id="vxA-6F-f4u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jv7-nf-V5L" secondAttribute="trailing" constant="16" id="uqa-Ax-4eF"/>
+                <constraint firstItem="Jv7-nf-V5L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vpB-Rx-Dgz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="lGh-Fd-J7b"/>
+                    <exclude reference="unh-hk-w0B"/>
+                    <exclude reference="EjW-uQ-B04"/>
+                    <exclude reference="dPU-pG-9QE"/>
+                    <exclude reference="SWe-WJ-Sug"/>
+                    <exclude reference="haF-ko-kfJ"/>
+                    <exclude reference="cDK-qC-yyM"/>
+                    <exclude reference="vpB-Rx-Dgz"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <include reference="lGh-Fd-J7b"/>
+                    <include reference="dPU-pG-9QE"/>
+                    <include reference="SWe-WJ-Sug"/>
+                    <include reference="cDK-qC-yyM"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="unh-hk-w0B"/>
+                    <include reference="EjW-uQ-B04"/>
+                    <include reference="haF-ko-kfJ"/>
+                    <include reference="vpB-Rx-Dgz"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>

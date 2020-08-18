@@ -12,7 +12,8 @@ extension UIView {
     
     enum Radius {
         
-        /// Be aware, that `.circle` option should be set, when final size of view is set
+        /// Be aware, that `.circle` option should be set, when final size of UI element is set
+        /// `viewDidLayoutSubviews` or `layoutSubviews` is should be fine
         case circle
         case custom(radius: CGFloat)
     }

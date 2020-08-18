@@ -12,6 +12,9 @@
 		CE4E5FE824EAAAE8004A1422 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FE724EAAAE8004A1422 /* UIApplicationExtension.swift */; };
 		CE4E5FEA24EAAB79004A1422 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FE924EAAB79004A1422 /* UIViewControllerExtension.swift */; };
 		CE4E5FED24EABD0C004A1422 /* NavigationInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FEC24EABD0C004A1422 /* NavigationInitializable.swift */; };
+		CE4E5FF124EAD94D004A1422 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FEF24EAD94D004A1422 /* HistoryViewController.swift */; };
+		CE4E5FF224EAD94D004A1422 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4E5FF024EAD94D004A1422 /* HistoryViewController.xib */; };
+		CE4E5FF424EAD989004A1422 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E5FF324EAD989004A1422 /* HistoryPresenter.swift */; };
 		CE670BBB24C78B4100F749EB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */; };
 		CE670BBD24C792BE00F749EB /* AudioPlayingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */; };
 		CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */; };
@@ -45,6 +48,9 @@
 		CE4E5FE724EAAAE8004A1422 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		CE4E5FE924EAAB79004A1422 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE4E5FEC24EABD0C004A1422 /* NavigationInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInitializable.swift; sourceTree = "<group>"; };
+		CE4E5FEF24EAD94D004A1422 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CE4E5FF024EAD94D004A1422 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		CE4E5FF324EAD989004A1422 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
 		CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayingService.swift; sourceTree = "<group>"; };
 		CE690E4324C62282007DF3C2 /* TimerPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPreferenceView.xib; sourceTree = "<group>"; };
@@ -91,6 +97,16 @@
 				CE4E5FEC24EABD0C004A1422 /* NavigationInitializable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE4E5FEE24EAD93A004A1422 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E5FF324EAD989004A1422 /* HistoryPresenter.swift */,
+				CE4E5FEF24EAD94D004A1422 /* HistoryViewController.swift */,
+				CE4E5FF024EAD94D004A1422 /* HistoryViewController.xib */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		CE690E4224C6225D007DF3C2 /* TimerPreferenceView */ = {
@@ -151,12 +167,13 @@
 		CE9B76BB24C60ABB006EDE16 /* Presenation */ = {
 			isa = PBXGroup;
 			children = (
-				CE9B76BC24C60AC0006EDE16 /* HomeView */,
+				CE4E5FEE24EAD93A004A1422 /* History */,
+				CE9B76BC24C60AC0006EDE16 /* Home */,
 			);
 			path = Presenation;
 			sourceTree = "<group>";
 		};
-		CE9B76BC24C60AC0006EDE16 /* HomeView */ = {
+		CE9B76BC24C60AC0006EDE16 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				CE399F0324CADF9E004BB45B /* HomeModel.swift */,
@@ -164,7 +181,7 @@
 				CE9B76BD24C60AEA006EDE16 /* HomeViewController.swift */,
 				CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */,
 			);
-			path = HomeView;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		CEC7312724C5F64200B39CF3 = {
@@ -298,6 +315,7 @@
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
 				CE690E4424C62282007DF3C2 /* TimerPreferenceView.xib in Resources */,
 				CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */,
+				CE4E5FF224EAD94D004A1422 /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +336,7 @@
 				CEDBDA1F24C6120600693DAA /* UIViewExtension.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
 				CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */,
+				CE4E5FF424EAD989004A1422 /* HistoryPresenter.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
 				CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */,
 				CEA346B024CC6C92005ECBAD /* AudioRecordingService.swift in Sources */,
@@ -325,6 +344,7 @@
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CE4E5FED24EABD0C004A1422 /* NavigationInitializable.swift in Sources */,
 				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
+				CE4E5FF124EAD94D004A1422 /* HistoryViewController.swift in Sources */,
 				CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */,
 				CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */,
 				CEDBDA2C24C61C9100693DAA /* UIColorExtension.swift in Sources */,
