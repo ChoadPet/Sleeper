@@ -26,6 +26,7 @@ class RecordTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        accessoryType = .disclosureIndicator
     }
     
     func configure(record: RecordModel) {

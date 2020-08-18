@@ -16,7 +16,7 @@ class TimeEntity: NSManagedObject {
     
     class func createTime(timeModel: TimeModel, in context: NSManagedObjectContext) throws -> TimeEntity {
         let request: NSFetchRequest<TimeEntity> = TimeEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "created == %K", #keyPath(TimeEntity.created), timeModel.created as NSDate)
+        request.predicate = NSPredicate(format: "%K == %@", #keyPath(TimeEntity.created), timeModel.created as NSDate)
         
         do {
             let matches = try context.fetch(request)

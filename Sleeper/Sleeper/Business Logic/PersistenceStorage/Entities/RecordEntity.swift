@@ -21,7 +21,8 @@ class RecordEntity: NSManagedObject {
         let request: NSFetchRequest<RecordEntity> = RecordEntity.fetchRequest()
         
         // https://stackoverflow.com/a/52400493/6057764
-        request.predicate = NSPredicate(format: "unique == %K", #keyPath(RecordEntity.unique), recordModel.unique.uuidString)
+        print("Record model uuid: \(recordModel.unique.uuidString)")
+        request.predicate = NSPredicate(format: "%K == %@", #keyPath(RecordEntity.unique), recordModel.unique.uuidString)
         
         do {
             let matches = try context.fetch(request)
