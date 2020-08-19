@@ -42,7 +42,6 @@
 		CE9B76C024C60AEA006EDE16 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */; };
 		CE9B76C224C60AFA006EDE16 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */; };
 		CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */; };
-		CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4424C76D0800351AF2 /* RSAlertController.swift */; };
 		CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4624C7750F00351AF2 /* TimerPreferenceModel.swift */; };
 		CEC3505A24EC6D5A0022F9C7 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505824EC6D5A0022F9C7 /* OptionsViewController.swift */; };
 		CEC3505B24EC6D5A0022F9C7 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */; };
@@ -101,7 +100,6 @@
 		CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CE9B76C124C60AFA006EDE16 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
-		CEA01C4424C76D0800351AF2 /* RSAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAlertController.swift; sourceTree = "<group>"; };
 		CEA01C4624C7750F00351AF2 /* TimerPreferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceModel.swift; sourceTree = "<group>"; };
 		CEC3505824EC6D5A0022F9C7 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 				CE690E4224C6225D007DF3C2 /* TimerPreferenceView */,
 				CEDBDA2E24C61D2E00693DAA /* RSNavigationController.swift */,
 				CEDBDA3224C621F100693DAA /* RSBaseView.swift */,
-				CEA01C4424C76D0800351AF2 /* RSAlertController.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -482,7 +479,6 @@
 				CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */,
 				CE4E5FF424EAD989004A1422 /* HistoryPresenter.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
-				CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */,
 				CE31EA0224EAA8CD006BF246 /* Configurator.swift in Sources */,
 				CEDBDA3324C621F100693DAA /* RSBaseView.swift in Sources */,
 				CE4E5FED24EABD0C004A1422 /* NavigationInitializable.swift in Sources */,

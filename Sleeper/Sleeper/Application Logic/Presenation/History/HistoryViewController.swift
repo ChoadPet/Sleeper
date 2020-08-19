@@ -21,10 +21,6 @@ class HistoryViewController: UITableViewController {
         presenter.viewDidLoad()
     }
     
-    deinit {
-        print(self)
-    }
-    
     // MARK: Actions
     
     @objc private func closeAction(_ sender: UIBarButtonItem) {

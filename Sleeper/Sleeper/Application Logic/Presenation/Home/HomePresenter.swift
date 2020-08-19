@@ -83,8 +83,7 @@ final class HomePresenter {
             self.homeModel.soundTimerModel = newModel
         }
         let options = homeModel.soundTimerModel.optionsTitles.map {
-            OptionModel(title: $0,
-                        isSelected: $0 == homeModel.soundTimerModel.optionTitle)
+            OptionModel(title: $0, isSelected: $0 == homeModel.soundTimerModel.optionTitle)
         }
         coordinator.optionsViewController(options: options, optionChosen: optionChosenHandler)
     }
@@ -105,10 +104,6 @@ extension HomePresenter: HomeModelDelegate {
     func soundTimerDidChange(_ newModel: TimerPreferenceModel) {
         userDefaultsService.soundTimer = newModel.optionTitle
         view.configureSoundTimerView(newModel)
-        
-        if homeModel.applicationState == .playing {
-            print("should we add more time?")
-        }
     }
     
 }
