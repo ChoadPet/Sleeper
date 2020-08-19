@@ -34,7 +34,7 @@ final class Coordinator {
     
     func optionsViewController(options: [OptionModel], optionChosen: ((OptionModel) -> Void)?) {
         let viewController = configurator.configure(.options(options: options, optionChosen: optionChosen))
-        router.present(viewController, animated: true, modalPresentationStyle: .pageSheet)
+        router.present(viewController, animated: true, modalPresentationStyle: .formSheet)
     }
     
     func historyViewController() {

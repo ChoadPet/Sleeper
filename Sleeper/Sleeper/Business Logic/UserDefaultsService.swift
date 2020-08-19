@@ -8,18 +8,22 @@
 
 import Foundation
 
+protocol UserSaveable {
+    func set(_ value: Any?, forKey defaultName: String)
+    func value(forKey key: String) -> Any?
+}
+
 class UserDefaultsService {
     
     enum Keys: String {
-        
         case soundTimer
     }
     
-    private let userDefaults: UserDefaults
+    private let userDefaults: UserSaveable
     
     
-    init() {
-        self.userDefaults = UserDefaults.standard
+    init(userSaveable: UserSaveable = UserDefaults.standard) {
+        self.userDefaults = userSaveable
     }
     
     private func save<T>(_ value: T, forKey key: Keys) {
@@ -37,5 +41,8 @@ extension UserDefaultsService {
         get { value(forKey: .soundTimer) as? String }
         set { save(newValue, forKey: .soundTimer) }
     }
+}
+
+extension UserDefaults: UserSaveable {
     
 }

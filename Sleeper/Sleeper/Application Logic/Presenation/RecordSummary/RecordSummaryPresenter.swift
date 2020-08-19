@@ -49,7 +49,7 @@ final class RecordSummaryPresenter {
     }
     
     private func createSection(_ section: SectionType) -> Section<String> {
-        let items: [String] = section.rows.map { createRow($0) }
+        let items = section.rows.map { createRow($0) }
         return Section<String>(name: "", items: items)
     }
     
@@ -70,7 +70,3 @@ final class RecordSummaryPresenter {
     
 }
 
-struct Section<T> {
-    let name: String
-    var items = [T]()
-}

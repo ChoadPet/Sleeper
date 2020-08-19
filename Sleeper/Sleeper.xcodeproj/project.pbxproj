@@ -48,6 +48,7 @@
 		CEC3505B24EC6D5A0022F9C7 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */; };
 		CEC3505D24EC6D9D0022F9C7 /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */; };
 		CEC3505F24EC6F010022F9C7 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505E24EC6F010022F9C7 /* OptionModel.swift */; };
+		CEC3506724ED1F3E0022F9C7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3506624ED1F3E0022F9C7 /* Section.swift */; };
 		CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7313324C5F64200B39CF3 /* AppDelegate.swift */; };
 		CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313C24C5F64500B39CF3 /* Assets.xcassets */; };
 		CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */; };
@@ -106,6 +107,7 @@
 		CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
 		CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
 		CEC3505E24EC6F010022F9C7 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
+		CEC3506624ED1F3E0022F9C7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		CEC7313024C5F64200B39CF3 /* Sleeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7313324C5F64200B39CF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7313C24C5F64500B39CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				CE28D77E24EC1D9B008017CB /* RecordModel.swift */,
 				CE28D78024EC1DC5008017CB /* TimeModel.swift */,
+				CEC3506624ED1F3E0022F9C7 /* Section.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				CEF468B024EBF81B00BA6C68 /* Sleeper.xcdatamodeld in Sources */,
 				CE28D78124EC1DC5008017CB /* TimeModel.swift in Sources */,
 				CEDBDA2824C6174900693DAA /* Constants.swift in Sources */,
+				CEC3506724ED1F3E0022F9C7 /* Section.swift in Sources */,
 				CE399F0424CADF9E004BB45B /* HomeModel.swift in Sources */,
 				CE4E5FF424EAD989004A1422 /* HistoryPresenter.swift in Sources */,
 				CEDBDA2524C616B800693DAA /* UIImageExtension.swift in Sources */,
