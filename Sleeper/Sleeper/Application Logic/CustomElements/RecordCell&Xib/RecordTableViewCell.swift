@@ -10,13 +10,13 @@ import UIKit
 
 class RecordTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel! {
+    @IBOutlet private weak var titleLabel: UILabel! {
         didSet {
             titleLabel.textColor = UIColor.accent
             titleLabel.font = UIFont.systemFont(ofSize: 21, weight: .medium)
         }
     }
-    @IBOutlet weak var statusLabel: UILabel! {
+    @IBOutlet private weak var statusLabel: UILabel! {
         didSet {
             statusLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
         }

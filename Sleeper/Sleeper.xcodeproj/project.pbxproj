@@ -44,6 +44,10 @@
 		CEA01C4324C7597200351AF2 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */; };
 		CEA01C4524C76D0800351AF2 /* RSAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4424C76D0800351AF2 /* RSAlertController.swift */; };
 		CEA01C4724C7750F00351AF2 /* TimerPreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01C4624C7750F00351AF2 /* TimerPreferenceModel.swift */; };
+		CEC3505A24EC6D5A0022F9C7 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505824EC6D5A0022F9C7 /* OptionsViewController.swift */; };
+		CEC3505B24EC6D5A0022F9C7 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */; };
+		CEC3505D24EC6D9D0022F9C7 /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */; };
+		CEC3505F24EC6F010022F9C7 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505E24EC6F010022F9C7 /* OptionModel.swift */; };
 		CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7313324C5F64200B39CF3 /* AppDelegate.swift */; };
 		CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313C24C5F64500B39CF3 /* Assets.xcassets */; };
 		CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */; };
@@ -98,6 +102,10 @@
 		CEA01C4224C7597200351AF2 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		CEA01C4424C76D0800351AF2 /* RSAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAlertController.swift; sourceTree = "<group>"; };
 		CEA01C4624C7750F00351AF2 /* TimerPreferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferenceModel.swift; sourceTree = "<group>"; };
+		CEC3505824EC6D5A0022F9C7 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
+		CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
+		CEC3505E24EC6F010022F9C7 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		CEC7313024C5F64200B39CF3 /* Sleeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7313324C5F64200B39CF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7313C24C5F64500B39CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -260,6 +268,7 @@
 		CE9B76BB24C60ABB006EDE16 /* Presenation */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3505724EC6CF30022F9C7 /* Options */,
 				CE4C14F324EC274F00E0255B /* RecordSummary */,
 				CE4E5FEE24EAD93A004A1422 /* History */,
 				CE9B76BC24C60AC0006EDE16 /* Home */,
@@ -276,6 +285,17 @@
 				CE9B76BE24C60AEA006EDE16 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CEC3505724EC6CF30022F9C7 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3505E24EC6F010022F9C7 /* OptionModel.swift */,
+				CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */,
+				CEC3505824EC6D5A0022F9C7 /* OptionsViewController.swift */,
+				CEC3505924EC6D5A0022F9C7 /* OptionsViewController.xib */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 		CEC7312724C5F64200B39CF3 = {
@@ -421,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */,
+				CEC3505B24EC6D5A0022F9C7 /* OptionsViewController.xib in Resources */,
 				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
 				CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */,
 				CE28D78624EC2227008017CB /* RecordTableViewCell.xib in Resources */,
@@ -440,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9B76C224C60AFA006EDE16 /* HomePresenter.swift in Sources */,
+				CEC3505D24EC6D9D0022F9C7 /* OptionsPresenter.swift in Sources */,
 				CE4C150C24EC4CE000E0255B /* DateExtension.swift in Sources */,
 				CE9B76B624C609A1006EDE16 /* Router.swift in Sources */,
 				CE4E5FE824EAAAE8004A1422 /* UIApplicationExtension.swift in Sources */,
@@ -464,8 +486,10 @@
 				CE4C14F924EC277800E0255B /* RecordSummaryPresenter.swift in Sources */,
 				CE28D78524EC2227008017CB /* RecordTableViewCell.swift in Sources */,
 				CE28D77C24EC12C4008017CB /* TimeEntity.swift in Sources */,
+				CEC3505A24EC6D5A0022F9C7 /* OptionsViewController.swift in Sources */,
 				CE4C150624EC3A2E00E0255B /* CustomHeaderView.swift in Sources */,
 				CE690E4624C6228F007DF3C2 /* TimerPreferenceView.swift in Sources */,
+				CEC3505F24EC6F010022F9C7 /* OptionModel.swift in Sources */,
 				CE28D78824EC2397008017CB /* TableViewInitializable.swift in Sources */,
 				CE4E5FF124EAD94D004A1422 /* HistoryViewController.swift in Sources */,
 				CE4C150324EC34F200E0255B /* RecordSummarySections.swift in Sources */,

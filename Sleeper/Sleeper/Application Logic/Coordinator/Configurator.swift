@@ -30,6 +30,14 @@ final class Configurator {
                                           persistentStorage: persistentStorage)
             viewController.presenter = presenter
             return viewController
+        case .options(let options, let optionChosen):
+            let viewController = OptionsViewController.initViewControllerFromNib()
+            let presenter = OptionsPresenter(view: viewController,
+                                             coordinator: coordinator,
+                                             options: options,
+                                             optionChosen: optionChosen)
+            viewController.presenter = presenter
+            return viewController
         case .history:
             let viewController = HistoryViewController.initViewControllerFromNib()
             let presenter = HistoryPresenter(view: viewController,
@@ -53,6 +61,7 @@ extension Configurator {
     
     enum Screen {
         case home
+        case options(options: [OptionModel], optionChosen: ((OptionModel) -> Void)?)
         case history
         case recordSummary(record: RecordModel)
     }

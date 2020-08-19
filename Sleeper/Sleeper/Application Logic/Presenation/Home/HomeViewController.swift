@@ -99,17 +99,4 @@ extension HomeViewController: HomeViewProtocol {
     func changeTitleLabel(_ title: String) {
         titleLabel.text = title
     }
-    
-    func showAlert(title: String, actionsTitles: [String], completion: ((String) -> Void)?) {
-        let alert = RSAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-        let optionsActions = actionsTitles.map { // :(
-            UIAlertAction(title: $0, style: .default) { action in
-                completion?(action.title!)
-            }
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(cancelAction)
-        alert.addActions(optionsActions)
-        present(alert, animated: true)
-    }
 }

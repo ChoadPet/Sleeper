@@ -12,9 +12,6 @@ protocol HomeViewProtocol: class, NavigationInitializable {
     func configureSoundTimerView(_ model: TimerPreferenceModel)
     func changePrimaryButton(_ title: String)
     func changeTitleLabel(_ title: String)
-    func showAlert(title: String,
-                   actionsTitles: [String],
-                   completion: ((String) -> Void)?)
 }
 
 final class HomePresenter {
@@ -80,13 +77,16 @@ final class HomePresenter {
     }
     
     func soundTimerPressed() {
-        let title = homeModel.soundTimerModel.title
-        let titles = homeModel.soundTimerModel.optionsTitles
-        view.showAlert(title: title, actionsTitles: titles) { [unowned self] chosenOption in
-            let newModel = TimerPreferenceModel(string: chosenOption)
+        let optionChosenHandler: (OptionModel) -> Void = { chosenOption in
+            let newModel = TimerPreferenceModel(string: chosenOption.title)
             guard newModel != self.homeModel.soundTimerModel else { return }
             self.homeModel.soundTimerModel = newModel
         }
+        let options = homeModel.soundTimerModel.optionsTitles.map {
+            OptionModel(title: $0,
+                        isSelected: $0 == homeModel.soundTimerModel.optionTitle)
+        }
+        coordinator.optionsViewController(options: options, optionChosen: optionChosenHandler)
     }
 }
 
@@ -105,7 +105,12 @@ extension HomePresenter: HomeModelDelegate {
     func soundTimerDidChange(_ newModel: TimerPreferenceModel) {
         userDefaultsService.soundTimer = newModel.optionTitle
         view.configureSoundTimerView(newModel)
+        
+        if homeModel.applicationState == .playing {
+            print("should we add more time?")
+        }
     }
+    
 }
 
 // MARK: - AudioServiceDelegate implementation

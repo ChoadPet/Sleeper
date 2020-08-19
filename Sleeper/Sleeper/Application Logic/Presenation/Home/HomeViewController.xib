@@ -66,10 +66,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhg-wP-Kxi" userLabel="SoundTimerView" customClass="TimerPreferenceView" customModule="Sleeper" customModuleProvider="target">
-                    <rect key="frame" x="16" y="656" width="382" height="44"/>
+                    <rect key="frame" x="16" y="650" width="382" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Itk-N1-l1W"/>
+                        <constraint firstAttribute="height" constant="50" id="Itk-N1-l1W"/>
                     </constraints>
                 </view>
             </subviews>

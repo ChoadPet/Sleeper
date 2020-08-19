@@ -26,8 +26,7 @@ struct Constants {
     static let timerInfo = "TIME INFO"
     
     static let uniqueIdentifierTitle = "Unique identifier for this each record."
-    static let soundTimerOptionTitle = "Unique identifier for this each record."
-    static let timerTitle = "Sound timer option, which was used for this record."
+    static let soundTimerOptionTitle = "Sound timer option, which was used for this record."
     static let statusTitle = "Cancelled: when user press cancel playing.\nFinished: when sound was finished by Sound Timer option."
     static let timeTitle = "Created: when sound was started.\nFinished: when sound was stopped."
     

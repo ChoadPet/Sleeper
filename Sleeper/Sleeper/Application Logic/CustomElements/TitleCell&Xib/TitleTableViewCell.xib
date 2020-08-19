@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-IV-s5p">
-                        <rect key="frame" x="16" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="20" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -27,7 +27,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SaO-IV-s5p" secondAttribute="trailing" constant="16" id="KEs-Vs-4XW"/>
                     <constraint firstItem="SaO-IV-s5p" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qRo-BK-c7B"/>
-                    <constraint firstItem="SaO-IV-s5p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="tO1-Z3-GX8"/>
+                    <constraint firstItem="SaO-IV-s5p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="tO1-Z3-GX8"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

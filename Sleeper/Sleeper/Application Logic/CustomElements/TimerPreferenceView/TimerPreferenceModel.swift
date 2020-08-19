@@ -18,13 +18,15 @@ final class TimerPreferenceModel {
         return Constants.soundTimer
     }
     
-    /// Name of option, example: `off`, `1 min` etc
+    /// Name of current chosen option;
+    /// example: `off`, `1 min` etc
+    /// Default: `off`
     var optionTitle: String {
         guard let time = time else { return timeType.rawValue }
         return "\(time) \(timeType.rawValue)"
     }
     
-    /// Titles used in available option for `UIAlertController`
+    /// Titles used in available option for list of available options
     var optionsTitles: [String] {
         return [
             TimerPreferenceModel(time: nil, timeType: .off),
@@ -33,7 +35,8 @@ final class TimerPreferenceModel {
             TimerPreferenceModel(time: 5, timeType: .min),
             TimerPreferenceModel(time: 10, timeType: .min),
             TimerPreferenceModel(time: 15, timeType: .min),
-            TimerPreferenceModel(time: 20, timeType: .min)
+            TimerPreferenceModel(time: 20, timeType: .min),
+            TimerPreferenceModel(time: 1, timeType: .hours),
             ].map { $0.optionTitle }
     }
     
@@ -79,7 +82,6 @@ final class TimerPreferenceModel {
 extension TimerPreferenceModel {
     
     enum TimeType: String {
-        
         case off
         case min
         case sec

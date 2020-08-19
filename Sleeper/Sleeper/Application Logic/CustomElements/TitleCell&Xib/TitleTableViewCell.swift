@@ -10,7 +10,7 @@ import UIKit
 
 class TitleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel! {
+    @IBOutlet private weak var titleLabel: UILabel! {
         didSet {
             titleLabel.textColor = .white
             titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -24,7 +24,8 @@ class TitleTableViewCell: UITableViewCell {
         backgroundColor = .darkGray
     }
 
-    func configure(title: String) {
+    func configure(title: String, isSelected: Bool = false) {
         titleLabel.text = title
+        accessoryType = isSelected ? .checkmark : .none
     }
 }

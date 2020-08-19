@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wuM-zd-t8I">
-                        <rect key="frame" x="16" y="12" width="42" height="41"/>
+                        <rect key="frame" x="20" y="12" width="42" height="41"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TE-hy-1Vg">
                                 <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
@@ -37,7 +37,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="wuM-zd-t8I" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JMC-8C-yPe"/>
-                    <constraint firstItem="wuM-zd-t8I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xcS-Ch-geD"/>
+                    <constraint firstItem="wuM-zd-t8I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="xcS-Ch-geD"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
