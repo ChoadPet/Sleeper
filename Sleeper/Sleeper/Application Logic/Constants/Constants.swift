@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-   
+    
     struct Home {
         static let idle = "Idle"
         static let playing = "Playing"
@@ -23,14 +23,14 @@ struct Constants {
     
     struct RecordSummary {
         static let identifier = "UUID"
-         static let timer = "TIMER"
-         static let status = "STATUS"
-         static let timerInfo = "TIME INFO"
-         
-         static let uniqueIdentifierTitle = "Unique identifier for each record."
-         static let soundTimerOptionTitle = "Sound timer option, which was used for this record."
-         static let statusTitle = "Cancelled: when user press cancel playing.\nFinished: when sound was finished by Sound Timer option."
-         static let timeTitle = "Created: when sound was started.\nFinished: when sound was stopped."
+        static let timer = "TIMER"
+        static let status = "STATUS"
+        static let timerInfo = "TIME INFO"
+        
+        static let uniqueIdentifierTitle = "Unique identifier for each record."
+        static let soundTimerOptionTitle = "Sound timer option, which was used for this record."
+        static let statusTitle = "Cancelled: when user press cancel playing.\nFinished: when sound was finished by Sound Timer option."
+        static let timeTitle = "Created: when sound was started.\nFinished: when sound was stopped."
         static let created = "Created"
         static let finished = "Finished"
     }
