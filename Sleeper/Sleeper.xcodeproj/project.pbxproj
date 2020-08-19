@@ -250,11 +250,9 @@
 		CE9B76B924C60A8A006EDE16 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CEE4FD4C24ED53A000F77D91 /* Core */,
 				CE28D77D24EC1D92008017CB /* Models */,
-				CEF468B324EBFBC700BA6C68 /* PersistenceStorage */,
 				CE4E5FEB24EABCFB004A1422 /* Protocols */,
-				CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */,
-				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -384,6 +382,16 @@
 				CEDBDA3224C621F100693DAA /* RSBaseView.swift */,
 			);
 			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		CEE4FD4C24ED53A000F77D91 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CEF468B324EBFBC700BA6C68 /* PersistenceStorage */,
+				CE670BBC24C792BE00F749EB /* AudioPlayingService.swift */,
+				CE670BBA24C78B4100F749EB /* UserDefaultsService.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		CEF468B324EBFBC700BA6C68 /* PersistenceStorage */ = {

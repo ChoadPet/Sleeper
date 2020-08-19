@@ -17,7 +17,7 @@ protocol HistoryViewProtocol: class, NavigationInitializable, TableViewInitializ
 
 final class HistoryPresenter {
     
-    enum ViewState {
+    private enum ViewState {
         case empty
         case hasRecords
     }
