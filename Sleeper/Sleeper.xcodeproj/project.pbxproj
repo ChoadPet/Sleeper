@@ -48,6 +48,8 @@
 		CEC3505D24EC6D9D0022F9C7 /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */; };
 		CEC3505F24EC6F010022F9C7 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3505E24EC6F010022F9C7 /* OptionModel.swift */; };
 		CEC3506724ED1F3E0022F9C7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3506624ED1F3E0022F9C7 /* Section.swift */; };
+		CEC3506A24ED4CEA0022F9C7 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3506924ED4CEA0022F9C7 /* EmptyView.swift */; };
+		CEC3506C24ED4CFE0022F9C7 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3506B24ED4CFE0022F9C7 /* EmptyView.xib */; };
 		CEC7313424C5F64200B39CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7313324C5F64200B39CF3 /* AppDelegate.swift */; };
 		CEC7313D24C5F64500B39CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313C24C5F64500B39CF3 /* Assets.xcassets */; };
 		CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7313E24C5F64500B39CF3 /* LaunchScreen.storyboard */; };
@@ -106,6 +108,8 @@
 		CEC3505C24EC6D9D0022F9C7 /* OptionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
 		CEC3505E24EC6F010022F9C7 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		CEC3506624ED1F3E0022F9C7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		CEC3506924ED4CEA0022F9C7 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		CEC3506B24ED4CFE0022F9C7 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		CEC7313024C5F64200B39CF3 /* Sleeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7313324C5F64200B39CF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7313C24C5F64500B39CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +303,15 @@
 			path = Options;
 			sourceTree = "<group>";
 		};
+		CEC3506824ED4CC90022F9C7 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3506924ED4CEA0022F9C7 /* EmptyView.swift */,
+				CEC3506B24ED4CFE0022F9C7 /* EmptyView.xib */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 		CEC7312724C5F64200B39CF3 = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +375,7 @@
 		CEDBDA2D24C61CFD00693DAA /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3506824ED4CC90022F9C7 /* EmptyView */,
 				CE4C150424EC3A1600E0255B /* CustomHeaderView */,
 				CE4C14FB24EC2F2E00E0255B /* TitleCell&Xib */,
 				CE28D78224EC220A008017CB /* RecordCell&Xib */,
@@ -440,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC3506C24ED4CFE0022F9C7 /* EmptyView.xib in Resources */,
 				CEC7314024C5F64500B39CF3 /* LaunchScreen.storyboard in Resources */,
 				CEC3505B24EC6D5A0022F9C7 /* OptionsViewController.xib in Resources */,
 				CEDBDA2324C6141700693DAA /* nature.m4a in Resources */,
@@ -464,6 +479,7 @@
 				CEC3505D24EC6D9D0022F9C7 /* OptionsPresenter.swift in Sources */,
 				CE4C150C24EC4CE000E0255B /* DateExtension.swift in Sources */,
 				CE9B76B624C609A1006EDE16 /* Router.swift in Sources */,
+				CEC3506A24ED4CEA0022F9C7 /* EmptyView.swift in Sources */,
 				CE4E5FE824EAAAE8004A1422 /* UIApplicationExtension.swift in Sources */,
 				CE9B76B724C609A1006EDE16 /* Coordinator.swift in Sources */,
 				CE9B76B524C609A1006EDE16 /* AppCoordinator.swift in Sources */,

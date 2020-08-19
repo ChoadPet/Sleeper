@@ -33,26 +33,26 @@ extension RecordSummaryPresenter {
         var headerTitle: String {
             switch self {
             case .identifier:
-                return Constants.identifier
+                return Constants.RecordSummary.identifier
             case .timer:
-                return Constants.timer
+                return Constants.RecordSummary.timer
             case .status:
-                return Constants.status
+                return Constants.RecordSummary.status
             case .time:
-                return Constants.timerInfo
+                return Constants.RecordSummary.timerInfo
             }
         }
         
         var footerTitle: String {
             switch self {
             case .identifier:
-                return Constants.uniqueIdentifierTitle
+                return Constants.RecordSummary.uniqueIdentifierTitle
             case .timer:
-                return Constants.soundTimerOptionTitle
+                return Constants.RecordSummary.soundTimerOptionTitle
             case .status:
-                return Constants.statusTitle
+                return Constants.RecordSummary.statusTitle
             case .time:
-                return Constants.timeTitle
+                return Constants.RecordSummary.timeTitle
             }
         }
         

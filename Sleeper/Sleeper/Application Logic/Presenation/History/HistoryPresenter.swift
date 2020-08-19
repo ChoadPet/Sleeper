@@ -10,15 +10,36 @@ import Foundation
 
 protocol HistoryViewProtocol: class, NavigationInitializable, TableViewInitializable {
     func insert(at indexPaths: [IndexPath])
+    
+    func displayEmptyState()
+    func removeEmptyState()
 }
 
 final class HistoryPresenter {
+    
+    enum ViewState {
+        case empty
+        case hasRecords
+    }
 
     private unowned let view: HistoryViewProtocol
     private let coordinator: Coordinator
     private let persistentStorage: PersistenceStorage
     
-    private(set) var dataSource: [RecordModel] = []
+    private(set) var dataSource: [RecordModel] = [] {
+        didSet {
+            switch viewState {
+            case .empty:
+                view.displayEmptyState()
+            case .hasRecords:
+                view.removeEmptyState()
+            }
+        }
+    }
+    
+    private var viewState: ViewState {
+        return dataSource.isEmpty ? .empty : .hasRecords
+    }
     
     
     init(view: HistoryViewProtocol,

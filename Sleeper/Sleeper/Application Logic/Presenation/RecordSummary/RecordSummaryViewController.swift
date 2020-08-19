@@ -79,7 +79,7 @@ extension RecordSummaryViewController: UITableViewDataSource {
 extension RecordSummaryViewController: RecordSummaryViewProtocol {
     
     func initNavigation() {
-        navigationItem.title = "Record Summary"
+        navigationItem.title = Constants.NavigationTitles.recordSummary
     }
     
     func initTableView() {

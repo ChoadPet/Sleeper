@@ -61,7 +61,7 @@ extension OptionsViewController: UITableViewDataSource {
 extension OptionsViewController: OptionsViewProtocol {
     
     func initNavigation() {
-        navigationItem.title = "Options"
+        navigationItem.title = Constants.NavigationTitles.options
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
                                                             style: .plain,
                                                             target: self,

@@ -61,7 +61,7 @@ extension HistoryViewController {
 extension HistoryViewController: HistoryViewProtocol {
     
     func initNavigation() {
-        navigationItem.title = "History"
+        navigationItem.title = Constants.NavigationTitles.history
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
                                                             style: .plain,
                                                             target: self,
@@ -81,5 +81,15 @@ extension HistoryViewController: HistoryViewProtocol {
     
     func insert(at indexPaths: [IndexPath]) {
         tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+    
+    func displayEmptyState() {
+        let view = EmptyView()
+        view.configure(title: Constants.History.noRecordsYet)
+        tableView.backgroundView = view
+    }
+    
+    func removeEmptyState() {
+        tableView.backgroundView = nil
     }
 }

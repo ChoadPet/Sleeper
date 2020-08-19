@@ -48,8 +48,8 @@ extension HomeModel {
         
         var title: String {
             switch self {
-            case .play: return Constants.play
-            case .pause: return Constants.pause
+            case .play: return Constants.ButtonsTitles.play
+            case .pause: return Constants.ButtonsTitles.pause
             }
         }
     }
@@ -65,9 +65,9 @@ extension HomeModel {
         
         var title: String {
             switch self {
-            case .idle: return Constants.idle
-            case .playing: return Constants.playing
-            case .paused: return Constants.paused
+            case .idle: return Constants.Home.idle
+            case .playing: return Constants.Home.playing
+            case .paused: return Constants.Home.paused
             }
         }
     }

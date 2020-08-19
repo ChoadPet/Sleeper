@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = Constants.idle
+            titleLabel.text = Constants.Home.idle
             titleLabel.textColor = UIColor.white
             titleLabel.font = UIFont.systemFont(ofSize: 27, weight: .black)
         }
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var primaryButton: UIButton! {
         didSet {
-            primaryButton.setTitle(Constants.play, for: .normal)
+            primaryButton.setTitle(Constants.ButtonsTitles.play, for: .normal)
             primaryButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
             primaryButton.setTitleColor(.white, for: .normal)
             primaryButton.setBackgroundImage(UIImage(color: UIColor.accent, size: CGSize(width: 1, height: 1)), for: .normal)
@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var secondaryButton: UIButton! {
         didSet {
-            secondaryButton.setTitle(Constants.cancel, for: .normal)
+            secondaryButton.setTitle(Constants.ButtonsTitles.cancel, for: .normal)
             secondaryButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
             secondaryButton.setTitleColor(.white, for: .normal)
             secondaryButton.setBackgroundImage(UIImage(color: UIColor.systemGray5, size: CGSize(width: 1, height: 1)), for: .normal)

@@ -15,7 +15,7 @@ final class TimerPreferenceModel {
     
     /// Title used for `soundTimer`view title
     var title: String {
-        return Constants.soundTimer
+        return Constants.Home.soundTimer
     }
     
     /// Name of current chosen option;
