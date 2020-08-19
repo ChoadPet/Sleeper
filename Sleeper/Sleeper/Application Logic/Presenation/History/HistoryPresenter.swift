@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HistoryViewProtocol: class, NavigationInitializable, TableViewInitializable {
-    
+    func insert(at indexPaths: [IndexPath])
 }
 
 final class HistoryPresenter {
@@ -30,11 +30,31 @@ final class HistoryPresenter {
         self.persistentStorage = persistentStorage
     }
     
+    deinit {
+        persistentStorage.removeDidChangeEntityObserving()
+    }
+    
     func viewDidLoad() {
         view.initNavigation()
         view.initTableView()
         
-        dataSource = persistentStorage.fetchRecords().map { $0.recordModel }
+        dataSource = persistentStorage.fetchAll(entity: RecordEntity.self).map { $0.recordModel }
+        
+        persistentStorage.addDidChangeEntityObserving()
+        persistentStorage.recordEntitiesDidChangeCompletion = { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .inserted(let object):
+                let records = object.map { $0.recordModel }
+                let indexPaths: [IndexPath] = records.map { record in
+                    self.dataSource.append(record)
+                    return IndexPath(row: self.dataSource.count - 1, section: 0)
+                }
+                self.view.insert(at: indexPaths)
+            default:
+                break
+            }
+        }
     }
     
     func userDidSelect(at indexPath: IndexPath) {
@@ -46,4 +66,5 @@ final class HistoryPresenter {
         coordinator.router.dismissViewController(animated: true)
     }
     
+
 }

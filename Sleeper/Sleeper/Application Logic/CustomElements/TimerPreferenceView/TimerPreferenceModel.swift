@@ -30,7 +30,7 @@ final class TimerPreferenceModel {
     var optionsTitles: [String] {
         return [
             TimerPreferenceModel(time: nil, timeType: .off),
-            TimerPreferenceModel(time: 10, timeType: .sec),
+            TimerPreferenceModel(time: 5, timeType: .sec),
             TimerPreferenceModel(time: 1, timeType: .min),
             TimerPreferenceModel(time: 5, timeType: .min),
             TimerPreferenceModel(time: 10, timeType: .min),

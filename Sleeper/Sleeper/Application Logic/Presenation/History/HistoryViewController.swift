@@ -21,6 +21,10 @@ class HistoryViewController: UITableViewController {
         presenter.viewDidLoad()
     }
     
+    deinit {
+        print(self)
+    }
+    
     // MARK: Actions
     
     @objc private func closeAction(_ sender: UIBarButtonItem) {
@@ -77,5 +81,9 @@ extension HistoryViewController: HistoryViewProtocol {
     
     func updateTableView() {
         tableView.reloadData()
+    }
+    
+    func insert(at indexPaths: [IndexPath]) {
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
 }

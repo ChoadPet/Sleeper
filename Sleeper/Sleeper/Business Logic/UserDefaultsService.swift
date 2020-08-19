@@ -19,19 +19,19 @@ class UserDefaultsService {
         case soundTimer
     }
     
-    private let userDefaults: UserSaveable
+    private let userSaveable: UserSaveable
     
     
     init(userSaveable: UserSaveable = UserDefaults.standard) {
-        self.userDefaults = userSaveable
+        self.userSaveable = userSaveable
     }
     
     private func save<T>(_ value: T, forKey key: Keys) {
-        userDefaults.set(value, forKey: key.rawValue)
+        userSaveable.set(value, forKey: key.rawValue)
     }
     
     private func value(forKey key: Keys) -> Any? {
-        return userDefaults.value(forKey: key.rawValue)
+        return userSaveable.value(forKey: key.rawValue)
     }
 }
 
